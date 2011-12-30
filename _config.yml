@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://cloudkickr.github.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://blog.cloudkickr.com
+title: cloudkickr's octopress blog
+subtitle: the app development group
+author: Bent Cardan
 simple_search: http://google.com/search
-description:
+description: using octopress: a blogging framework for hackers
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
