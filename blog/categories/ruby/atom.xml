@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | cloudkickr]]></title>
+  <link href="http://cloudkickr.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://cloudkickr.github.com/"/>
+  <updated>2012-07-29T03:56:41-04:00</updated>
+  <id>http://cloudkickr.github.com/</id>
+  <author>
+    <name><![CDATA[Bent Cardan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Deployment: Gitlab]]></title>
+    <link href="http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab/"/>
+    <updated>2011-12-30T21:50:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab</id>
+    <content type="html"><![CDATA[<p>Cloudkickr is pleased to tell about its recent successful GitLab deployment. <a target="_blank" href="http://gitlabhq.com/">GitlabHQ</a> is for anyone managing project source code or interested in greater version-control and visibility with Git. Based on <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a>, GitLab is a free git repository management app. It's your own lite app for projects/repositories hosting on your server. Moreover, it's fast, secure and a stable solution built straight off the <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a> framework.</p>
+
+<p>See a live demo of cloudkickr's deployment at <a href="http://fresh.gs.com" target="_blank">fresh.gs</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Surfacing from Source]]></title>
+    <link href="http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source/"/>
+    <updated>2011-12-30T21:02:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source</id>
+    <content type="html"><![CDATA[<p>This blog is open-source and hosted by github. Framed by <a href="http://octopress.org">Octopress</a>. Origin <a href="https://github.com/cloudkickr/cloudkickr.github.com">here.<a/></p>
+]]></content>
+  </entry>
+  
+</feed>

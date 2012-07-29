@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[cloudkickr]]></title>
+  <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
+  <link href="http://cloudkickr.github.com/"/>
+  <updated>2012-07-29T03:56:41-04:00</updated>
+  <id>http://cloudkickr.github.com/</id>
+  <author>
+    <name><![CDATA[Bent Cardan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[some jQuery effects]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/07/29/jquery-effects/"/>
+    <updated>2012-07-29T02:27:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/07/29/jquery-effects</id>
+    <content type="html"><![CDATA[<p>I need to reference some simple JavaScript over here for a site I&#8217;m building. We&#8217;re going to review the basic jQuery effects and end up explaining method syntax.</p>
+
+<figure class='code'><figcaption><span>Hide Method - hide.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This method hides all the elements in a jQuery object.</p>
+
+<figure class='code'><figcaption><span>Timed Hide - hide.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Passing in the time constraint hides elements in a jQuery object over the duration with an optional easing style.</p>
+
+<figure class='code'><figcaption><span>hide with function - hide.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hide the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.</p>
+
+<figure class='code'><figcaption><span>Show Method - show.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This method shows all the elements in a jQuery object.</p>
+
+<figure class='code'><figcaption><span>Timed show - show.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Passing in the time constraint shows elements in a jQuery object over the duration with an optional easing style.</p>
+
+<figure class='code'><figcaption><span>show with function - show.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Show the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SOPA: What's up with that?]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/01/19/sopa-whats-up-with-that/"/>
+    <updated>2012-01-19T01:01:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/01/19/sopa-whats-up-with-that</id>
+    <content type="html"><![CDATA[<p>I think Wikipedia said it best.</p>
+
+<blockquote><p>SOPA and PIPA are symptoms of a larger issue. They are misguided solutions to a misunderstood problem. In the U.S. and abroad, legislators and big media are embracing censorship and sacrificing civil liberties in their attacks on free knowledge and an open Internet.</p><footer><strong>Wikipedia</strong> <cite><a href='http://en.wikipedia.org/wiki/Wikipedia:SOPA_initiative/Learn_more'>SOPA initiative/Learn More</a></cite></footer></blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Search Engine in development]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/01/04/Search-Engine/"/>
+    <updated>2012-01-04T04:54:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/01/04/Search-Engine</id>
+    <content type="html"><![CDATA[<p>Cloudkickr&#8217;s search engine is in Development through <a href="http://rubyonrails.org" target="_blank">Ruby on Rails</a>. Both Twitter and Groupon were built with Ruby on Rails. Our search engine architecture is designed for routekickr (the new site and app coming soon). <br/><br/>A search engine has three parts: Crawl, Index and Query. Crawl is similar to how your web browser gets you content to view while you&#8217;re surfing the internet. So the Crawl part of the search engine goes out and collects HTML pages. This data is indexed for query optimization, running the query part is what the end-user interacts with to find the relevent result, a data mapping between query and index .</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Happy New Year!]]></title>
+    <link href="http://cloudkickr.github.com/blog/2011/12/31/happy-new-year/"/>
+    <updated>2011-12-31T19:23:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2011/12/31/happy-new-year</id>
+    <content type="html"><![CDATA[<p>&#8230;from <a href="http://bent-cardan.com" target="_blank">Bent Cardan</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Deployment: Gitlab]]></title>
+    <link href="http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab/"/>
+    <updated>2011-12-30T21:50:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab</id>
+    <content type="html"><![CDATA[<p>Cloudkickr is pleased to tell about its recent successful GitLab deployment. <a target="_blank" href="http://gitlabhq.com/">GitlabHQ</a> is for anyone managing project source code or interested in greater version-control and visibility with Git. Based on <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a>, GitLab is a free git repository management app. It&#8217;s your own lite app for projects/repositories hosting on your server. Moreover, it&#8217;s fast, secure and a stable solution built straight off the <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a> framework.</p>
+
+<p>See a live demo of cloudkickr&#8217;s deployment at <a href="http://fresh.gs.com" target="_blank">fresh.gs</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Surfacing from Source]]></title>
+    <link href="http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source/"/>
+    <updated>2011-12-30T21:02:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source</id>
+    <content type="html"><![CDATA[<p>This blog is open-source and hosted by github. Framed by <a href="http://octopress.org">Octopress</a>. Origin <a href="https://github.com/cloudkickr/cloudkickr.github.com">here.<a/></p>
+]]></content>
+  </entry>
+  
+</feed>
