@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T08:44:09-04:00</updated>
+  <updated>2012-07-29T08:59:22-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,14 +18,14 @@
     <link href="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/"/>
     <updated>2012-07-29T05:02:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta</id>
-    <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by Nginx and coupled with Puma.io. To get started, clone the master branch of Rails on github.  You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
+    <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by Nginx and initialized with Puma. To get started, clone the master branch of Rails on github.  You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pull down the master branch - clone.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://github.com/rails/rails.git
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Let those edge railtie binaries generate your Rails 4 app from the freshly cloned repo. Hold off on bundle.</p>
+<p>Let those edge railtie binaries generate a Rails 4 beta app from the freshly cloned repo.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - rails.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -45,7 +45,7 @@
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>gem 'puma'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Kick up your database.yml pools to at least 16, which is puma's default allocation of multi-threaded processes.</p>
+<p>Kick up your database.yml pools to any number your database can handle.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>inside the config directory - database.yml </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -54,16 +54,16 @@
 </span><span class='line'><span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">16</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Go bigger when you let puma loose if you like but be mindful that Puma's multithread config numbers will always get capped by the pool size in your database.yml. Pool represents max simultaneous data transactions into or out of the database. Don't even trip about that because in general we want to increase the size of our pool wherever possible. Set your gems and run Bundle. Beyond this step it's typical that you'll need to start nudging bundle to help issue lazy or environment path deprived binaries underlying various processes with 'bundle exec' or pass in --binstubs like:</p>
+<p>Go bigger when you let puma loose if you like but be mindful that Puma's multithread config numbers will always get capped by the pool size in your database.yml or whatever your database can handle. Pool represents max simultaneous data transactions into or out of the database. In general we want to increase the size of our pool wherever possible. Set your gems and run Bundle. Beyond this step it's typical that you'll need to start nudging bundle to help issue lazy or environment path deprived binaries underlying various processes with 'bundle exec' or pass in --binstubs like:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - bundle.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>bundle install --binstubs
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Stop reading this and go bump up a rails app already and do what you do at this point. Heroku or something like that. Or just keep reading and remember as you embark on the experience of Rails 4 development hit the <a href="http://edgeguides.rubyonrails.org/">edge guides</a> and google all the errors you don't have a handle on. Check out the depth of content available in Rails error messaging while in development mode. After generating my first controller I would have never guessed there are new syntax contraints throughout the config/routes.rb file. Routes complained about how I matched the controller action, insisting that I preface all Get requests with Get. Not such a bad idea... uhh like where is the Match request in architecting a RESTful app? Play with the process queue initializer setting if you're not ready to multithread with puma across your classes. RSpec can predict results and reign over potentially unmanageable complexity flowing out of multithreaded processing across the layers of your app. :)</p>
+<p>Stop reading this and go bump up a rails app already and do what you do at this point. Heroku or something like that. Hit the <a href="http://edgeguides.rubyonrails.org/">edge guides</a> and google all the errors you don't have a handle on. Check out the depth of content available in Rails error messaging while in development mode. After generating my first controller I would have never guessed there are new syntax contraints throughout the config/routes.rb file. Routes complained about how I matched the controller action, insisting that I preface all Get requests with Get. Not such a bad idea... uhh like where is the Match request in architecting a RESTful app? Play with the process queue initializer setting. Test multithreads with puma across your classes. RSpec can predict results and reign over potentially unmanageable complexity there. :)</p>
 
-<p>Let's not get ahead of ourselves, just consult the edge guides and embrace Rails 4 already. Go through production.rb and some of the other niceties available throughout your initializers. Proxy nginx to encounter multiple upstream Puma processes at the unix socket. I keep all my rails apps proxied by their own nginx.conf. Each to their own, so each rails app has a proxy file weighing less than ten lines of code in the config directory. Before showing you my nginx.conf file, it needs symbolicalic linking from within the Nginx sites-enabled directory to any random directory you decide to place it. I put that thing in the config directory of a rails app. Whatever, I tend to keep a few distributed Ubuntu 12 instances, getting dragged across my clouds is pretty fun because it's sponsored by <a href="http://chairliftdevelopment.com">Chairlift Development LLC</a>. We surf clouds like tailspin on remote SSH like this:</p>
+<p>Set your production.rb and review some of the other niceties available throughout your initializers. You could always proxy nginx to encounter multiple upstream Puma processes at the unix socket. I keep all my rails apps proxied by their own nginx.conf. Each to their own, so each rails app has a proxy file weighing less than ten lines of code in the config directory. Before showing you my nginx.conf file, it needs symbolicalic linking from within the Nginx sites-enabled directory to any random directory you decide to place your sym linked nginx.conf file. I put that thing in the config directory of a rails app. I surf clouds like tailspin on remote SSH like this:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>symbolic link within sites-enabled directory to hit that app's nginx.conf - link.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
