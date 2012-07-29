@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T04:49:22-04:00</updated>
+  <updated>2012-07-29T06:01:22-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Rails 4.0.0.beta]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/"/>
+    <updated>2012-07-29T05:02:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta</id>
+    <content type="html"><![CDATA[<p>I&#8217;m enjoying  Rails 4.0.0.beta in Production. It feels fast, especially when proxied by Nginx and coupled with Puma.io. To get started, clone the master branch of Rails on github.  You&#8217;ll need ruby 1.9.3 and probably a github account set up with your machine&#8217;s public key linked to your github account.</p>
+
+<p>{% pull down the master branch - clone.sh %}
+$ git clone git://github.com/rails/rails.git
+{% endcodeblock %}</p>
+
+<p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
+
+<p>{% generate the rails app - create.sh %}
+$ rails/railties/bin/rails new myapp &#8211;edge &#8211;skip-bundle &#8211;skip-test-unit
+{% endcodeblock %}</p>
+
+<p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
+
+<p>{% generate the rails app - create.sh %}
+$ bundle
+{% endcodeblock %}</p>
+
+<p>Bump up the server.</p>
+
+<p>{% generate the rails app - create.sh %}
+$ rails s
+{% endcodeblock %}</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[some jQuery effects]]></title>

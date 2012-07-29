@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Ruby - cloudkickr</title>
+  <title>Using Rails 4.0.0.beta - cloudkickr</title>
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="Category: Ruby">
+  <meta name="description" content="I&#8217;m enjoying Rails 4.0.0.beta in Production. It feels fast, especially when proxied by Nginx and coupled with Puma.io. To get started, clone &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cloudkickr.github.comblog/categories/ruby">
+  <link rel="canonical" href="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,66 +67,106 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Ruby</h1>
+    
+      <h1 class="entry-title">Using Rails 4.0.0.beta</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-29T05:02:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>I&#8217;m enjoying  Rails 4.0.0.beta in Production. It feels fast, especially when proxied by Nginx and coupled with Puma.io. To get started, clone the master branch of Rails on github.  You&#8217;ll need ruby 1.9.3 and probably a github account set up with your machine&#8217;s public key linked to your github account.</p>
 
-  
-  <h2>2012</h2>
+<p>{% pull down the master branch - clone.sh %}
+$ git clone git://github.com/rails/rails.git
+{% endcodeblock %}</p>
 
-<article>
-  
-<h1><a href="/blog/2012/07/29/rails-4.0.0.beta/">Using Rails 4.0.0.beta</a></h1>
-<time datetime="2012-07-29T05:02:00-04:00" pubdate><span class='month'>Jul</span> <span class='day'>29</span> <span class='year'>2012</span></time>
+<p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/web-development/'>Web Development</a></span>
-</footer>
+<p>{% generate the rails app - create.sh %}
+$ rails/railties/bin/rails new myapp &#8211;edge &#8211;skip-bundle &#8211;skip-test-unit
+{% endcodeblock %}</p>
 
+<p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
 
-</article>
+<p>{% generate the rails app - create.sh %}
+$ bundle
+{% endcodeblock %}</p>
 
+<p>Bump up the server.</p>
 
-
-  
-  <h2>2011</h2>
-
-<article>
-  
-<h1><a href="/blog/2011/12/30/ruby-on-rails-deployment-gitlab/">Ruby on Rails Deployment: Gitlab</a></h1>
-<time datetime="2011-12-30T21:50:00-05:00" pubdate><span class='month'>Dec</span> <span class='day'>30</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/github/'>Github</a>, <a class='category' href='/blog/categories/news/'>News</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2011/12/30/surfacing-from-source/">Surfacing from Source</a></h1>
-<time datetime="2011-12-30T21:02:00-05:00" pubdate><span class='month'>Dec</span> <span class='day'>30</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/github/'>Github</a>, <a class='category' href='/blog/categories/news/'>News</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a></span>
-</footer>
-
-
-</article>
-
+<p>{% generate the rails app - create.sh %}
+$ rails s
+{% endcodeblock %}</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Bent Cardan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-29T05:02:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/web-development/'>Web Development</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/" data-via="bcardan" data-counturl="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/29/jquery-effects/" title="Previous Post: some jQuery effects">&laquo; some jQuery effects</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

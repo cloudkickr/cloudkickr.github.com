@@ -9,7 +9,7 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="I need to reference some simple JavaScript over here for a site I&#8217;m building. We&#8217;re going to review the basic jQuery effects and end up &hellip;">
+  <meta name="description" content="I&#8217;m enjoying Rails 4.0.0.beta in Production. It feels fast, especially when proxied by Nginx and coupled with Puma.io. To get started, clone &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/29/rails-4.0.0.beta/">Using Rails 4.0.0.beta</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-29T05:02:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;m enjoying  Rails 4.0.0.beta in Production. It feels fast, especially when proxied by Nginx and coupled with Puma.io. To get started, clone the master branch of Rails on github.  You&#8217;ll need ruby 1.9.3 and probably a github account set up with your machine&#8217;s public key linked to your github account.</p>
+
+<p>{% pull down the master branch - clone.sh %}
+$ git clone git://github.com/rails/rails.git
+{% endcodeblock %}</p>
+
+<p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
+
+<p>{% generate the rails app - create.sh %}
+$ rails/railties/bin/rails new myapp &#8211;edge &#8211;skip-bundle &#8211;skip-test-unit
+{% endcodeblock %}</p>
+
+<p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
+
+<p>{% generate the rails app - create.sh %}
+$ bundle
+{% endcodeblock %}</p>
+
+<p>Bump up the server.</p>
+
+<p>{% generate the rails app - create.sh %}
+$ rails s
+{% endcodeblock %}</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -359,6 +417,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/29/rails-4.0.0.beta/">Using Rails 4.0.0.beta</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/29/jquery-effects/">some jQuery effects</a>
       </li>
     
@@ -372,10 +434,6 @@
     
       <li class="post">
         <a href="/blog/2011/12/31/happy-new-year/">Happy New Year!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/30/ruby-on-rails-deployment-gitlab/">Ruby on Rails Deployment: Gitlab</a>
       </li>
     
   </ul>
