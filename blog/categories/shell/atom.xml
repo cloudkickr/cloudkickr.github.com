@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Shell | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T03:56:41-04:00</updated>
+  <updated>2012-07-29T04:05:17-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://cloudkickr.github.com/blog/2012/01/04/Search-Engine/"/>
     <updated>2012-01-04T04:54:00-05:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/01/04/Search-Engine</id>
-    <content type="html"><![CDATA[<p>Cloudkickr's search engine is in Development through <a href="http://rubyonrails.org" target="_blank">Ruby on Rails</a>. Both Twitter and Groupon were built with Ruby on Rails. Our search engine architecture is designed for routekickr (the new site and app coming soon). <br/><br/>A search engine has three parts: Crawl, Index and Query. Crawl is similar to how your web browser gets you content to view while you're surfing the internet. So the Crawl part of the search engine goes out and collects HTML pages. This data is indexed for query optimization, running the query part is what the end-user interacts with to find the relevent result, a data mapping between query and index .</p>
+    <content type="html"><![CDATA[<p>Cloudkickr's search engine is in Development through <a href="http://rubyonrails.org" target="_blank">Ruby on Rails</a>. Both Twitter and Groupon were built with Ruby on Rails. Our search engine architecture is designed for routekickr (the new site and app coming soon). <br/><br/>A search engine has three parts: Crawl, Index and Query. Crawl is similar to how your web browser gets you content to view while you're surfing the internet. So the Crawl part of the search engine goes out and collects HTML pages. This data is indexed for query optimization. End-user interacts with query parameters to find the relevent result, so there has to be a decent and reasonable data mapping relating query params to index.</p>
 ]]></content>
   </entry>
   
