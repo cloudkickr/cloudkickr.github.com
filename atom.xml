@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T08:59:22-04:00</updated>
+  <updated>2012-07-29T09:01:09-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -26,7 +26,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Let those edge railtie binaries generate a Rails 4 beta app from the freshly cloned repo.</p>
+<p>Generate a Rails 4 beta app from the freshly cloned repo.</p>
 
 <figure class='code'><figcaption><span>generate the rails app - rails.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
