@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T06:01:22-04:00</updated>
+  <updated>2012-07-29T06:06:59-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -20,27 +20,31 @@
     <id>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta</id>
     <content type="html"><![CDATA[<p>I'm enjoying  Rails 4.0.0.beta in Production. It feels fast, especially when proxied by Nginx and coupled with Puma.io. To get started, clone the master branch of Rails on github.  You'll need ruby 1.9.3 and probably a github account set up with your machine's public key linked to your github account.</p>
 
-<p>{% pull down the master branch - clone.sh %}
-$ git clone git://github.com/rails/rails.git
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pull down the master branch - clone.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://github.com/rails/rails.git
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
 
-<p>{% generate the rails app - create.sh %}
-$ rails/railties/bin/rails new myapp --edge --skip-bundle --skip-test-unit
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - rails.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rails/railties/bin/rails new myapp --edge --skip-bundle --skip-test-unit
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Let those edge railties generate your Rails 4 app from the freshly cloned repo.</p>
 
-<p>{% generate the rails app - create.sh %}
-$ bundle
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - bundle.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>bundle
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Bump up the server.</p>
 
-<p>{% generate the rails app - create.sh %}
-$ rails s
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>server - server.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rails s
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
