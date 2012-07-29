@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T12:01:41-04:00</updated>
+  <updated>2012-07-29T17:02:31-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/"/>
     <updated>2012-07-29T05:02:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta</id>
-    <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by Nginx and initialized with Puma. To get started, clone the master branch of Rails on github.  You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
+    <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by Nginx and initialized with Puma. First I clone the master branch of Rails on Github.  There's a multithread option, and background process queue option available by default in the Rails 4 initializers. You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pull down the master branch - clone.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -32,11 +32,13 @@
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rails/railties/bin/rails new myrails4app --edge --skip-bundle --skip-test-unit
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Contemplate the version of Ruby needed. Brief restraint from bundle here presents an opportunity to isolate and to manage gem dependencies.</p>
+<p>Wait to run bundle for an opportunity to isolate and to manage gem dependencies.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>rvm - rvmrc.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rvm --rvmrc --create 1.9.3@myrails4app
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>myrails4app &lt;br/&gt;
+</span><span class='line'><span class="nv">$ </span>rvm --rvmrc --create 1.9.3@myrails4app
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Add the puma gem for multithreaded processing.</p>
@@ -45,7 +47,7 @@
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>gem 'puma'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Kick up your database.yml pools to any number it can handle. PostgreSQL might be a good option but so might sqlite. Redis would be the best for this. Puma defaults with 16 threads. Assuming modern server hardware equipped with multi-core processors, this means 16 requests by default simultaneously handled, routed and delivered by the app over one puma process.</p>
+<p>If you're going with a relatoinal database, kick up your pool: to higher parameters in the database.yml file, absolutely the higher pool is ideal, set it pool: 16. Puma defaults to 16 threads when no configuration is specified. Assuming modern server hardware equipped with multi-core processors, this means 16 request/response threads by default will be handled, routed and delivered by the app over one puma process.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>inside the config directory - database.yml </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -54,25 +56,33 @@
 </span><span class='line'><span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">16</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Go bigger when you let puma loose if you like. Be mindful that your default database.yml limits fiber count by pool size or otherwise the limit is established by whatever your database can handle. Pool params represents max simultaneous data transactions into or out of the database. In general we want to increase the size of our pool wherever possible. Set your gems and run Bundle. Beyond this step it's typical that you'll need nudge lazy ruby on rails executables using 'bundle exec' or try to pass in --binstubs if it prevents the need for 'bundle exec' while you rake migrations or 'rails s'.</p>
+<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we're using Active Record, we might opt for PostgreSQL. Redis would be among the best options available despite its single threaded architecture. In fact, we commit an error to dismiss a Puma/Redis combination on the basis of Puma's multithreaded and Redis' single-threaded difference alone.</p>
+
+<p>Redis was built for pipelining. A Request/Response server can be implemented so that it is able to process new requests even if the client didn't already read the old responses. This way it is possible to send multiple commands to the server without waiting for the replies at all, and finally read the replies in a single step. Redis Pipelining avoids I/O blocking, however it must be supported by available memory. Redis stores data in memory and later writes to disk.</p>
+
+<p>Go bigger when you let puma loose if you like. Be mindful that your default database.yml limits threading explicitly by pool size and more implicity at the limit of its ability to write and return data from threads. Pool params represents max simultaneous (or close to it) data transactions into or out of the database. In general we want to increase the size of our pool wherever possible. Set your gems and run Bundle. Beyond this step it's typical that you'll need to nudge on rails executables using 'bundle exec' or try to pass in --binstubs if it can prevent the need for 'bundle exec' if you ever rake migrations or 'rails s'.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - bundle.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>bundle install --binstubs
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Hit the <a href="http://edgeguides.rubyonrails.org/">edge guides</a> and google all the errors you don't have a handle on. Check out the depth of content available in Rails error messaging while in development mode. After generating my first controller I didn't see the new syntax contraints awaiting throughout the config/routes.rb file. Routes complained about how I matched the controller action using the older => syntax perfectly fine in rails 3.2.7.</p>
+<p>Hit the <a href="http://edgeguides.rubyonrails.org/">edge guides</a> and google all the errors you don't have a handle on. Check out the depth of content available in Rails error messaging, and check out the new exception handling interface in development mode.</p>
 
-<p>I thought it was cool Rails 4 asked me to revise syntax and preface all GET requests with GET. Not such a bad idea... because conveneince methods available to routes like 'match' belong elsewhere in the syntax anyway, like why was this match request marking the start of a RESTful action? Play with the process queue initializer setting. Set config.threadsafe! to test multithreads with puma across your classes but watch out for closely coupled procedural calculations in your method logic. Anything closely coupled is suspect ought to be refactored anyway as a matter of best practice and general code integrity. Look out for object ordering or incrementally dependent actions through the controller, (I'm thinking like counting actions in particular.. so watch out e-commerce cart models and controllers). In a multithreaded instance the app will begin to degrade meanful return values and will risk object integrity where fiber simultaneity is tolerated throughout its route. To protect business critical object-integrity across the app we might take note of these paterns and wrap them in the mutex class in order to shift fibers into a data-safe, linear approach. I think mutexing on multi-threads is the lamest solution because it just seem like bottleneck opportuntiy. People hate waiting for slow web apps. Forget the mutex class, the answer is decoupled design through refactoring. RSpec can predict results and might help reign over potentially unmanageable complexity or app retardation there. :)</p>
+<p>After generating my first controller I didn't see the new syntax contraints awaiting throughout the config/routes.rb file. Routes complained about how I matched the controller action using the older => syntax perfectly fine in rails 3.2.7. I thought it was cool Rails 4 asked me to revise this syntax and preface all GET requests with GET. Not such a bad idea...</p>
 
-<p>This weekend I'll be testing multithreading in production.rb and reviewing some of the other niceties available throughout Rails 4 initializers. I think a great way to observe an app like this in production is to proxy it with nginx on a remote server. I'd proxy-pass the puma processes upstream at the unix socket. Personally, I keep all my rails apps proxied by their own nginx.conf. Each to their own, so each rails app has a proxy file weighing less than ten lines of code in the config directory. Before showing you a truly chiseled nginx.conf file, it needs symbolicalic linking from within the Nginx sites-enabled directory to any random directory you decide to place this sym linked nginx.conf file. I put that thing in the config directory of the rails app. Surfin' clouds like tailspin on remote SSH like this:</p>
+<p>Play with the process queue initializer setting. Uncomment config.threadsafe! in the production.rb file to test multithreads with puma. If you do this, watch out for closely coupled procedural calculations. Anything coupled is suspect and ought to be refactored anyway. Look out for object ordering or dependent, interwoven actions generated in the controller, (I'm thinking like ActiveRecord's build method available for relating decoupled models for shopping cart and order relationships .. so watch out e-commerce cart models and controllers). In a multithreaded instance the app will begin to degrade meanful return values and will risk object integrity where thread simultaneity is lazily tolerated throughout the course of it routing. To protect business critical object-integrity across the app we might take note of these paterns and wrap them in the mutex class in order to shift the alignment of threads into a data-safe, linear approach. I think mutexing on multi-threads is problematic because it creates tremendous bottleneck opportuntiy. People hate waiting for slow web apps. Forget the mutex class, the answer is decoupled design through refactoring. RSpec can predict results and might help reign over potentially unmanageable complexity or app retardation there. :)</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>symbolic link within sites-enabled directory to hit that app's nginx.conf - link.sh </span></figcaption>
+<p>I think a great way to observe an app like this in production is to proxy it with nginx on a remote server, a VPS. I'd proxy-pass the puma process upstream at the unix socket. I like when all the rails apps running on the server are proxied by their own nginx.conf--this level of organization in deployment is possible because the centralized proxy setting configuration file references a nearby directory with by an include.</p>
+
+<p>Through a symbolic link we can relay data between directories about the nginx proxy server. Our communication is reminiscent of the PHP include.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>symbolic link within sites-enabled directory to hit app's nginx.conf - link.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo ln -s /home/myusername/allmyedgeapps/myrails4app/config/nginx.conf myrails4app.com
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>distilled Nginx - nginx.conf.sh </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>my_distilled_nginx - nginx.conf.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -97,14 +107,14 @@
 </span><span class='line'><span class="o">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Nginx will use port 80 by default so I wouldn't even specify that in the nginx.conf files across all the rails apps sharing port 80 at the proxy outset. Now unleash that cat and initialize puma. Keep in mind that all its incoming/outgoing request/response objects are proxied and passed to and from nginx. Make sure the hand-off occurs at the same place or else they won't be able to meet up and pass these respective objects in and out of the app.</p>
+<p>Nginx will use port 80 by default so I wouldn't even specify that in the nginx.conf files across all the rails apps sharing port 80 at the proxy outset. Now unleash and initialize puma. Keep in mind that all its incoming/outgoing request/response objects are proxied and passed to and from nginx. Restart Nginx if you have not done so already so that it picks up any changes made to CSS or JavaScript. Make sure the hand-off occurs at the same place (the shared unix socket) or else they won't be able to meet up and pass respective objects in and out of the app.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>let puma run multi-thread from the root directory of your rails app - puma.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>puma -b unix:///tmp/myrails4app.sock
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Yea I know we're not supposed to talk about configuration over convention but relax yourself because the sequence here is excessively arbitrary. After the sym link is made you restart nginx but the rest of it could occur freely either before or after the unix socket is held down at puma initialization. Once proxy and socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or concatenate subdomians for any number of rails apps pointed at a single IP address, really ought to be like IPv6. As Rails developers I know its a little unkosher to mention lower level shit like IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do most of this puma stuff and he has a lot more good ideas to watch at railscast.com!</p>
+<p>Yea I know we're not supposed to emphasize configuration over convention but most of the sequence here is arbitrary. After the sym link is made you restart nginx but the rest of it could occur freely either before or after the unix socket is held down at puma initialization. Once proxy and socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or concatenate subdomians for any number of rails apps pointed to a single IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do most of this puma stuff and he has a lot more good ideas to watch at railscast.com!</p>
 ]]></content>
   </entry>
   
