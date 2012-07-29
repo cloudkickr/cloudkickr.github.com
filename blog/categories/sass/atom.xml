@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Sass | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/sass/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T09:01:30-04:00</updated>
+  <updated>2012-07-29T09:38:48-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -19,9 +19,7 @@
     <updated>2012-01-19T01:01:00-05:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/01/19/sopa-whats-up-with-that</id>
     <content type="html"><![CDATA[<p>I think Wikipedia said it best.
-{% blockquote Wikipedia http://en.wikipedia.org/wiki/Wikipedia:SOPA_initiative/Learn_more SOPA initiative/Learn more %}
-SOPA and PIPA are symptoms of a larger issue. They are misguided solutions to a misunderstood problem. In the U.S. and abroad, legislators and big media are embracing censorship and sacrificing civil liberties in their attacks on free knowledge and an open Internet.
-{% endblockquote %}</p>
+<blockquote><p>SOPA and PIPA are symptoms of a larger issue. They are misguided solutions to a misunderstood problem. In the U.S. and abroad, legislators and big media are embracing censorship and sacrificing civil liberties in their attacks on free knowledge and an open Internet.</p><footer><strong>Wikipedia</strong> <cite><a href='http://en.wikipedia.org/wiki/Wikipedia:SOPA_initiative/Learn_more'>SOPA initiative/Learn More</a></cite></footer></blockquote></p>
 ]]></content>
   </entry>
   
