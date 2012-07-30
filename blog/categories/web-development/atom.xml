@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Development | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/web-development/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-30T11:24:02-04:00</updated>
+  <updated>2012-07-30T11:25:28-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -56,7 +56,7 @@
 </span><span class='line'><span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">16</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we're using Active Record, we might opt for PostgreSQL. Redis would be among the best options available for storing decoupled, thread-safe logic handled by Puma despite Redis' single threaded architecture. In fact, we err to dismiss a Puma/Redis combination on the basis of Puma's multithreaded and Redis' single-threaded difference alone.</p>
+<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we're using Active Record, we might opt for PostgreSQL. Redis would be among the best options available for storing decoupled, thread-safe logic handled by Puma despite Redis' single threaded architecture. In fact, we err to dismiss a Puma/Redis combination on the basis of Puma's multithreaded and Redis' single-threaded architectural difference alone.</p>
 
 <p>The Redis Server was built for pipelining. A Request/Response server can be implemented so that it is able to process new requests even if the client didn't already read the old responses. This way it is possible to send multiple commands to the server without waiting for the replies at all, and finally read the replies in a single step. Redis Pipelining avoids I/O blocking, however it must be supported by available memory. Redis stores data in memory and later writes to disk.</p>
 

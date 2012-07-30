@@ -140,7 +140,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we&#8217;re using Active Record, we might opt for PostgreSQL. Redis would be among the best options available for storing decoupled, thread-safe logic handled by Puma despite Redis&#8217; single threaded architecture. In fact, we err to dismiss a Puma/Redis combination on the basis of Puma&#8217;s multithreaded and Redis&#8217; single-threaded difference alone.</p>
+<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we&#8217;re using Active Record, we might opt for PostgreSQL. Redis would be among the best options available for storing decoupled, thread-safe logic handled by Puma despite Redis&#8217; single threaded architecture. In fact, we err to dismiss a Puma/Redis combination on the basis of Puma&#8217;s multithreaded and Redis&#8217; single-threaded architectural difference alone.</p>
 
 <p>The Redis Server was built for pipelining. A Request/Response server can be implemented so that it is able to process new requests even if the client didn&#8217;t already read the old responses. This way it is possible to send multiple commands to the server without waiting for the replies at all, and finally read the replies in a single step. Redis Pipelining avoids I/O blocking, however it must be supported by available memory. Redis stores data in memory and later writes to disk.</p>
 
