@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-30T11:31:58-04:00</updated>
+  <updated>2012-07-30T11:34:22-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/"/>
     <updated>2012-07-29T05:02:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta</id>
-    <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by Nginx and initialized with <a href="http://puma.io/">Puma</a>. First I clone the master branch of <a href="https://github.com/rails/rails">Rails on Github</a>.  There's a multithread option, and background process queue option available by default in the Rails 4 initializers. You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
+    <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by <a href="http://wiki.nginx.org/Main">Nginx</a> and initialized with <a href="http://puma.io/">Puma</a>. First I clone the master branch of <a href="https://github.com/rails/rails">Rails on Github</a>.  There's a multithread option, and background process queue option available by default in the Rails 4 initializers. You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pull down the master branch - clone.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
