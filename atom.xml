@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-29T17:06:16-04:00</updated>
+  <updated>2012-07-30T11:24:02-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -26,7 +26,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Generate a Rails 4 beta app from the freshly cloned repo.</p>
+<p>After cloning the master, we generate a Rails 4 beta apps by executing railties binaries in our local copy</p>
 
 <figure class='code'><figcaption><span>generate the rails app - rails.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -51,7 +51,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>gem 'puma'</span></code></pre></td></tr></table></div></figure>
 
 
-<p>If you&#8217;re going with a relatoinal database, kick up your pool: to higher parameters in the database.yml file, absolutely the higher pool is ideal, set it pool: 16. Puma defaults to 16 threads when no configuration is specified. Assuming modern server hardware equipped with multi-core processors, this means 16 request/response threads by default will be handled, routed and delivered by the app over one puma process.</p>
+<p>If you&#8217;re going with a relational database, kick up your pool: params in the database.yml file, absolutely the higher pool is ideal, set it to something like pool: 16. Puma defaults to 16 threads when no configuration is specified. Assuming modern server hardware equipped with multi-core processors, this means 16 request/response threads by default will be handled, routed and delivered by the app over one puma process.</p>
 
 <figure class='code'><figcaption><span>inside the config directory - database.yml </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -61,9 +61,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we&#8217;re using Active Record, we might opt for PostgreSQL. Redis would be among the best options available despite its single threaded architecture. In fact, we commit an error to dismiss a Puma/Redis combination on the basis of Puma&#8217;s multithreaded and Redis&#8217; single-threaded difference alone.</p>
+<p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we&#8217;re using Active Record, we might opt for PostgreSQL. Redis would be among the best options available for storing decoupled, thread-safe logic handled by Puma despite Redis&#8217; single threaded architecture. In fact, we err to dismiss a Puma/Redis combination on the basis of Puma&#8217;s multithreaded and Redis&#8217; single-threaded difference alone.</p>
 
-<p>Redis was built for pipelining. A Request/Response server can be implemented so that it is able to process new requests even if the client didn&#8217;t already read the old responses. This way it is possible to send multiple commands to the server without waiting for the replies at all, and finally read the replies in a single step. Redis Pipelining avoids I/O blocking, however it must be supported by available memory. Redis stores data in memory and later writes to disk.</p>
+<p>The Redis Server was built for pipelining. A Request/Response server can be implemented so that it is able to process new requests even if the client didn&#8217;t already read the old responses. This way it is possible to send multiple commands to the server without waiting for the replies at all, and finally read the replies in a single step. Redis Pipelining avoids I/O blocking, however it must be supported by available memory. Redis stores data in memory and later writes to disk.</p>
 
 <p>Go bigger when you let puma loose if you like. Be mindful that your default database.yml limits threading explicitly by pool size and more implicity at the limit of its ability to write and return data from threads. Pool params represents max simultaneous (or close to it) data transactions into or out of the database. In general we want to increase the size of our pool wherever possible. Set your gems and run Bundle. Beyond this step it&#8217;s typical that you&#8217;ll need to nudge on rails executables using &#8216;bundle exec&#8217; or try to pass in &#8211;binstubs if it can prevent the need for &#8216;bundle exec&#8217; if you ever rake migrations or &#8216;rails s&#8217;.</p>
 
@@ -77,7 +77,7 @@
 
 <p>After generating my first controller I didn&#8217;t see the new syntax contraints awaiting throughout the config/routes.rb file. Routes complained about how I matched the controller action using the older => syntax perfectly fine in rails 3.2.7. I thought it was cool Rails 4 asked me to revise this syntax and preface all GET requests with GET. Not such a bad idea&#8230;</p>
 
-<p>Play with the process queue initializer setting. Uncomment config.threadsafe! in the production.rb file to test multithreads with puma. If you do this, watch out for closely coupled procedural calculations. Anything coupled is suspect and ought to be refactored anyway. Look out for object ordering or dependent, interwoven actions generated in the controller, (I&#8217;m thinking like ActiveRecord&#8217;s build method available for relating has_many and Blongs_to model relationships for shopping cart and order relationships .. so watch out e-commerce cart models and controllers). To protect business critical object-integrity across the app we might take note of these paterns and wrap them in the mutex class in order to shift the alignment of threads into a data-safe, linear approach. I think mutexing on multi-threads is problematic because it creates tremendous bottleneck opportuntiy. People hate waiting for slow web apps. Forget the mutex class, the answer is decoupled design through refactoring. RSpec can predict results and might help reign over potentially unmanageable complexity or app retardation there. :)</p>
+<p>Play with the process queue initializer setting. Uncomment config.threadsafe! in the production.rb file to test multithreads with puma. If you do this, watch out for closely coupled procedural calculations. Anything coupled is suspect and ought to be refactored anyway. Look out for object ordering or dependent, interwoven actions generated in the controller, (I&#8217;m thinking like ActiveRecord&#8217;s build method available for relating has_many and Blongs_to model relationships for shopping cart and order relationships .. so watch out e-commerce cart models and controllers). To protect business critical object-integrity across the app we might take note of these patterns and wrap them in the mutex class in order to shift the alignment of threads into a data-safe, linear approach. I think mutexing on multi-threads is problematic because it creates tremendous bottleneck opportuntiy. People hate waiting for slow web apps. Forget the mutex class, the answer is decoupled design through refactoring. RSpec can predict results and might help reign over potentially unmanageable complexity or app retardation there. :)</p>
 
 <p>I think a great way to observe an app like this in production is to proxy it with nginx on a remote server, a VPS. I&#8217;d proxy-pass the puma process upstream at the unix socket. I like when all the rails apps running on the server are proxied by their own nginx.conf&#8211;this level of organization in deployment is possible because the centralized proxy setting configuration file references a nearby directory with by an include.</p>
 
@@ -117,7 +117,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Nginx will use port 80 by default so I wouldn&#8217;t even specify that in the nginx.conf files across all the rails apps sharing port 80 at the proxy outset. Now unleash and initialize puma. Keep in mind that all its incoming/outgoing request/response objects are proxied and passed to and from nginx. Restart Nginx if you have not done so already so that it picks up any changes made to CSS or JavaScript. Make sure the hand-off occurs at the same place (the shared unix socket) or else they won&#8217;t be able to meet up and pass respective objects in and out of the app.</p>
+<p>Nginx will use port 80 by default so I wouldn&#8217;t even specify that in the nginx.conf files across all the rails apps sharing port 80 at the proxy outset. Now unleash and initialize puma. Keep in mind that all its incoming/outgoing request/response objects are proxied and passed to and from nginx. Restart Nginx if you have not done so already so that it picks up the configs and knows which upstream socket to point the incoming request associated with the specified servername. Make sure the hand-off occurs at the same place (the shared unix socket)&#8230; so double check your upstream block, it&#8217;s ok you&#8217;re supposed to put three forward slashes in what&#8217;s passed to puma and only one forward slash ahead of that same location in your nginx upstream block.</p>
 
 <figure class='code'><figcaption><span>let puma run multi-thread from the root directory of your rails app - puma.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -125,7 +125,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Yea I know we&#8217;re not supposed to emphasize configuration over convention but most of the sequence here is arbitrary. After the sym link is made you restart nginx but the rest of it could occur freely either before or after the unix socket is held down at puma initialization. Once proxy and socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or concatenate subdomians for any number of rails apps pointed to a single IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do most of this puma stuff and he has a lot more good ideas to watch at railscast.com!</p>
+<p>Yea I know we&#8217;re not supposed to emphasize configuration over convention so explicitly but most of the sequence here is arbitrary. After the sym link is made you can always restart nginx but the rest of it could occur before or after the unix socket is held down at puma initialization. Once proxy and puma&#8217;s socket is held up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or subdomians any domain or even a naked IP address would be all treated equally for any number of rails apps pointed to that IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do most of this puma stuff and he has a lot more good ideas and expereince. Make sure to watch plenty of Ryan&#8217;s episodes at railscast.com to learn more!</p>
 ]]></content>
   </entry>
   
