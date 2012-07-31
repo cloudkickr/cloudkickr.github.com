@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-31T08:19:47-04:00</updated>
+  <updated>2012-07-31T08:34:25-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -77,12 +77,12 @@
 
 <p>We set a symbolic link in the sites sub-directory to complete this type of Nginx include. Each sym link can reference behavioral configuration in nginx across many different rails apps in parallel on a single IP. Perfect example of the power of unix. Our symbolic link brings config options available to the nginx proxy server as incoming requests to the server occur over the internet. The nginx include function is basically a PHP include() on steroids.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>symbolic link within sites-enabled directory to hit app's nginx.conf - link.sh </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/nginx/sites-enabled link.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo ln -s /home/myusername/allmyedgeapps/myrails4app/config/nginx.conf myrails4app.com
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>my_distilled_nginx - nginx.conf.sh </span></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/home/myusername/allmyedgeapps/myrails4app nginx.conf.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -114,7 +114,7 @@
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>puma -b unix:///tmp/myrails4app.sock
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Yea I know we're not supposed to emphasize configuration over convention so explicitly but most of the sequence here is arbitrary. After the sym link is made you can always restart nginx but the rest of it could occur before or after the unix socket is held down at puma initialization. Once proxy and puma's socket is held up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or subdomians any domain or even a naked IP address would be all treated equally for any number of rails apps pointed to that IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do most of this puma stuff and he has a lot more good ideas and expereince. Make sure to watch plenty of Ryan's episodes at railscast.com to learn more!</p>
+<p>I'll go against the trend to advocate configuration over convention just this once in order to be realistic. Deployment is as important as anything else. Now most of our sequence here is arbitrary. After the sym link is made you have to restart nginx but the rest of it could occur before or after the unix socket is held down at puma initialization. Once proxy and puma's socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or subdomians any domain or even a naked IP address would be all treated equally for any number of rails apps pointed to that IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do much of the puma stuff--find out more at his website--go to <a href="http://railscasts.com/">railscasts.com</a>!</p>
 ]]></content>
   </entry>
   
