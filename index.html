@@ -74,7 +74,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/07/30/new-post/">One Small Commit</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/07/30/one-small-commit/">One Small Commit</a></h1>
     
     
       <p class="meta">
@@ -196,15 +196,15 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Hit the <a href="http://edgeguides.rubyonrails.org/">edge guides</a> and google all the errors you don&#8217;t have a handle on. Check out the depth of content available in Rails error messaging, and check out the new exception handling interface in development mode.</p>
+<p><a href="http://edgeguides.rubyonrails.org/">Edge guides</a> are helpful, but I spend more time hitting <a href="http://edgeapi.rubyonrails.org/">the edgeapi</a> like a boss. Build up something and try to break it in order to check out the new error messaging and exception handling interface in development mode.</p>
 
-<p>After generating my first controller I didn&#8217;t see the new syntax contraints awaiting throughout the config/routes.rb file. Routes complained about how I matched the controller action using the older => syntax perfectly fine in rails 3.2.7. I thought it was cool Rails 4 asked me to revise this syntax and preface all GET requests with GET. Not such a bad idea&#8230;</p>
+<p>New syntax contraints await throughout the config/routes.rb file. Routes complained about how I matched the controller action using the older => syntax still perfectly fine in rails 3.2.7. I thought it was cool Rails 4 asked me to revise this syntax and preface all GET requests with GET. Not such a bad idea&#8230;</p>
 
-<p>Play with the process queue initializer setting. Uncomment config.threadsafe! in the production.rb file to test multithreads with puma. If you do this, watch out for closely coupled procedural calculations. Anything coupled is suspect and ought to be refactored anyway. Look out for object ordering or dependent, interwoven actions generated in the controller, (I&#8217;m thinking like ActiveRecord&#8217;s build method available for relating has_many and blongs_to model relationships for shopping cart and order relationships .. so watch out on making those e-commerce cart/order models and controllers). To protect business critical object-integrity across the app we might take note of these patterns and wrap them in the mutex class in order to shift the alignment of threads into a data-safe, linear approach. I think mutexing on multi-threads is problematic because it creates tremendous bottleneck opportuntiy. People hate waiting for slow web apps. Forget the mutex class, the answer is decoupled design through refactoring. RSpec can predict results and might help reign over potentially unmanageable complexity or app retardation there. :)</p>
+<p>Play with the process queue initializer setting. Uncomment config.threadsafe! in the production.rb file to test multithreads with puma. If you do this, watch out for closely coupled procedural calculations. Anything coupled is suspect and ought to be refactored anyway. Look out for object ordering or dependent, interwoven actions generated in the controller, (I&#8217;m thinking like ActiveRecord&#8217;s build method available for relating has_many and blongs_to model relationships like for shopping cart and order relationships .. so caution on implementing e-commerce cart/order models and controllers under this enviornment). To protect business critical object-integrity across the app we might take note of these patterns and wrap them in the mutex class in order to shift the alignment of threads into a data-safe, linear approach. I think mutexing on multi-threads is problematic because it bottlenecks the app and your request is sitting there spinning out where nowhere to go until the threads ahead complete their route. People hate waiting for slow web apps. Forget the mutex class, the answer is decoupled design through refactoring.</p>
 
-<p>I think a great way to observe an app like this in production is to proxy it with nginx on a remote server, a VPS. I&#8217;d proxy-pass the puma process upstream at the unix socket. I like when all the rails apps running on the server are proxied by their own nginx.conf&#8211;this level of organization in deployment is possible because the centralized proxy setting configuration file references a nearby directory (sites-enabled or in some installations sites-available) with an Nginx syntactical include.</p>
+<p>Let&#8217;s now observe the multithreaded rails4 app in production: proxy it with nginx on a remote server, a VPS. I like to proxy-pass the puma process upstream at the unix socket. Unix sockets: fast, reliable, secure. We can run rails apps run in parallel on the server, seemingly proxied by their own nginx.conf. I say seemingly because a centralized proxy config file references a sub-directory (sites-enabled or in some installations sites-available) with an Nginx syntactical include out to all these nginx.conf files associated with its own app.</p>
 
-<p>Through a symbolic link we control app-specific behavioral configuration in nginx between different applications and their directories. Perfect example of the power of unix. Our symbolic link makes app config options available to the nginx proxy server when incoming requests to the server occur over the internet. The nginx include function is basically a PHP include() on steroids.</p>
+<p>We set a symbolic link in the sites sub-directory to complete this type of Nginx include. Each sym link can reference behavioral configuration in nginx across many different rails apps in parallel on a single IP. Perfect example of the power of unix. Our symbolic link brings config options available to the nginx proxy server as incoming requests to the server occur over the internet. The nginx include function is basically a PHP include() on steroids.</p>
 
 <figure class='code'><figcaption><span>symbolic link within sites-enabled directory to hit app&#8217;s nginx.conf - link.sh </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -546,7 +546,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/07/30/new-post/">One small commit</a>
+        <a href="/blog/2012/07/30/one-small-commit/">One small commit</a>
       </li>
     
       <li class="post">
