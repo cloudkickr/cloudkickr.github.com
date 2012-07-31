@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-31T08:34:25-04:00</updated>
+  <updated>2012-07-31T09:14:44-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,13 +18,13 @@
     <link href="http://cloudkickr.github.com/blog/2012/07/30/one-small-commit/"/>
     <updated>2012-07-30T00:11:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/07/30/one-small-commit</id>
-    <content type="html"><![CDATA[<p>One small <a href="https://github.com/rails/rails/commit/0899be5798d20e3e886e5f741d3e4b1bf43afedd">commit</a> to open source, one giant leap for mankind.  Obviously this is old technology for the aliens who work at google.com.</p>
+    <content type="html"><![CDATA[<p>One small <a href="https://github.com/rails/rails/commit/0899be5798d20e3e886e5f741d3e4b1bf43afedd">commit</a> to open source, one giant leap for mankind?  Obviously this is old technology for the aliens who work at google.com.</p>
 
 <p>But the rest of us mortals of Earth will rejoice! Ladies and gentlemen, please enable wifi on all your devices, because the web is coming to life.</p>
 
-<p>Today, <a href="http://tenderlovemaking.com">Aaron Patterson</a>, changed the course of open source web software development history.</p>
+<p><a href="http://tenderlovemaking.com">Aaron Patterson</a> is changing the course of open source development history.</p>
 
-<p>The live web is no longer just a google thing. Today live browser updating became way more accessible for developers.</p>
+<p>The live web is no longer just a google thing. Live in-browser updating on changes in serverside data has become more accessible for developers.</p>
 
 <p>Learn more about the new reality of live web from <a href="http://tenderlovemaking.com/2012/07/30/is-it-live.html">Aaron Patterson&#8217;s is-it-live post</a>!</p>
 ]]></content>
