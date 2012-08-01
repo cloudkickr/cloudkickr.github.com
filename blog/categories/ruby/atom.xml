@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-07-31T09:14:44-04:00</updated>
+  <updated>2012-07-31T22:44:47-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -114,7 +114,7 @@
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>puma -b unix:///tmp/myrails4app.sock
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>I'll go against the trend to advocate configuration over convention just this once in order to be realistic. Deployment is as important as anything else. Now most of our sequence here is arbitrary. After the sym link is made you have to restart nginx but the rest of it could occur before or after the unix socket is held down at puma initialization. Once proxy and puma's socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or subdomians any domain or even a naked IP address would be all treated equally for any number of rails apps pointed to that IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do much of the puma stuff--find out more at his website--go to <a href="http://railscasts.com/">railscasts.com</a>!</p>
+<p>I'll go against the trend to advocate configuration over convention just this once in order to be realistic. Deployment is as important as anything else. Now most of our sequence here is arbitrary. After the sym link is made you have to restart nginx but the rest of it could occur before or after the unix socket is held down at puma initialization. Once proxy and puma's socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or subdomians any domain or even a naked IP address would be all treated equally for any number of rails apps pointed to that IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do much of the puma stuff on <a href="http://railscasts.com/">railscasts.com</a>.</p>
 ]]></content>
   </entry>
   
@@ -125,7 +125,7 @@
     <id>http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab</id>
     <content type="html"><![CDATA[<p>Cloudkickr is pleased to tell about its recent successful GitLab deployment. <a target="_blank" href="http://gitlabhq.com/">GitlabHQ</a> is for anyone managing project source code or interested in greater version-control and visibility with Git. Based on <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a>, GitLab is a free git repository management app. It's your own lite app for projects/repositories hosting on your server. Moreover, it's fast, secure and a stable solution built straight off the <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a> framework.</p>
 
-<p>See a live demo of cloudkickr's deployment at <a href="http://fresh.gs.com" target="_blank">fresh.gs</a>.</p>
+<p>See a live demo of cloudkickr's deployment at <a href="http://fresh.gs" target="_blank">fresh.gs</a>.</p>
 ]]></content>
   </entry>
   
