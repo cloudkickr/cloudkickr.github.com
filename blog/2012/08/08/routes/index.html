@@ -5,25 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>jekyll-s3 - cloudkickr</title>
+  <title>fix your routes - cloudkickr</title>
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="bucket policy - bucketpolicy.js 1
+  <meta name="description" content="Named routes are key to rails 3. Use the :as parameter. named route - routes.rb 1
 2
 3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-{ &quot;Version&quot;: &quot;2008-10-17&quot;, &quot;Statement&quot;: [ { &quot;Sid &hellip;">
+YourApp::Application.routes.draw do
+match &#39;/route&#39; =&gt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -32,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cloudkickr.github.com/blog/2012/08/02/new-post">
+  <link rel="canonical" href="http://cloudkickr.github.com/blog/2012/08/08/routes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -85,7 +75,7 @@
   
   <header>
     
-      <h1 class="entry-title">Jekyll-s3</h1>
+      <h1 class="entry-title">Fix Your Routes</h1>
     
     
       <p class="meta">
@@ -101,47 +91,23 @@
   
 
 
-<time datetime="2012-08-02T08:52:00-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
+<time datetime="2012-08-08T23:51:00-04:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><p>Named routes are key to rails 3. Use the :as parameter.</p>
 
-<figure class='code'><figcaption><span>bucket policy - bucketpolicy.js </span></figcaption>
+<figure class='code'><figcaption><span>named route - routes.rb </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;2008-10-17&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;Statement&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">{</span>
-</span><span class='line'>          <span class="s2">&quot;Sid&quot;</span><span class="o">:</span> <span class="s2">&quot;PublicReadGetObject&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="s2">&quot;Effect&quot;</span><span class="o">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="s2">&quot;Principal&quot;</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>              <span class="s2">&quot;AWS&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
-</span><span class='line'>          <span class="p">},</span>
-</span><span class='line'>          <span class="s2">&quot;Action&quot;</span><span class="o">:</span> <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="s2">&quot;arn:aws:s3:::yourbucketnamehere.com/*&quot;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">}</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">YourApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span> <span class="k">do</span>
+</span><span class='line'><span class="n">match</span> <span class="s1">&#39;/route&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;static_pages#route&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:route</span>
+</span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
-
-
 
 </div>
 
@@ -165,15 +131,21 @@
   
 
 
-<time datetime="2012-08-02T08:52:00-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
+<time datetime="2012-08-08T23:51:00-04:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cloudkickr.github.com/blog/2012/08/02/new-post/" data-via="bcardan" data-counturl="http://cloudkickr.github.com/blog/2012/08/02/new-post/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cloudkickr.github.com/blog/2012/08/08/routes/" data-via="bcardan" data-counturl="http://cloudkickr.github.com/blog/2012/08/08/routes/" >Tweet</a>
   
   
   
@@ -182,7 +154,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/07/30/one-small-commit/" title="Previous Post: One small commit">&laquo; One small commit</a>
+        <a class="basic-alignment left" href="/blog/2012/08/02/using-jekyll-s3/" title="Previous Post: jekyll-s3">&laquo; jekyll-s3</a>
       
       
     </p>
@@ -198,7 +170,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/08/02/new-post/">jekyll-s3</a>
+        <a href="/blog/2012/08/08/routes/">fix your routes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/02/using-jekyll-s3/">jekyll-s3</a>
       </li>
     
       <li class="post">
@@ -211,10 +187,6 @@
     
       <li class="post">
         <a href="/blog/2012/07/29/jquery-effects/">some jQuery effects</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/19/sopa-whats-up-with-that/">SOPA: What's up with that?</a>
       </li>
     
   </ul>

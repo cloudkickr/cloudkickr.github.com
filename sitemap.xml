@@ -2,50 +2,54 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source/</loc>
-        <lastmod>2012-01-18T21:24:44-05:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab/</loc>
-        <lastmod>2012-07-31T14:14:52-04:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2011/12/31/happy-new-year/</loc>
-        <lastmod>2012-01-18T21:24:44-05:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2012/01/04/Search-Engine/</loc>
-        <lastmod>2012-07-29T04:04:56-04:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2012/01/19/sopa-whats-up-with-that/</loc>
-        <lastmod>2012-01-18T21:24:44-05:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2012/07/29/jquery-effects/</loc>
-        <lastmod>2012-07-29T02:43:40-04:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta/</loc>
-        <lastmod>2012-07-31T10:34:45-04:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/2012/07/30/one-small-commit/</loc>
-        <lastmod>2012-07-31T09:14:31-04:00</lastmod>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
     </url>
     <url>
-        <loc>http://cloudkickr.github.com/blog/2012/08/02/new-post/</loc>
-        <lastmod>2012-08-02T08:58:42-04:00</lastmod>
+        <loc>http://cloudkickr.github.com/blog/2012/08/02/using-jekyll-s3/</loc>
+        <lastmod>2012-08-08T23:47:57-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://cloudkickr.github.com/blog/2012/08/08/routes/</loc>
+        <lastmod>2012-08-08T23:54:20-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/about/</loc>
-        <lastmod>2012-08-02T08:58:42-04:00</lastmod>
+        <lastmod>2012-08-08T23:54:20-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/blog/archives/</loc>
-        <lastmod>2012-08-02T08:58:42-04:00</lastmod>
+        <lastmod>2012-08-08T23:54:20-04:00</lastmod>
     </url>
     <url>
         <loc>http://cloudkickr.github.com/</loc>
-        <lastmod>2012-08-02T08:58:42-04:00</lastmod>
+        <lastmod>2012-08-08T23:54:20-04:00</lastmod>
     </url>
 </urlset>

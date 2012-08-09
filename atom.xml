@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-08-02T08:59:59-04:00</updated>
+  <updated>2012-08-08T23:54:41-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -14,10 +14,29 @@
 
   
   <entry>
+    <title type="html"><![CDATA[fix your routes]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/08/08/routes/"/>
+    <updated>2012-08-08T23:51:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/08/08/routes</id>
+    <content type="html"><![CDATA[<p>Named routes are key to rails 3. Use the :as parameter.</p>
+
+<figure class='code'><figcaption><span>named route - routes.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">YourApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span> <span class="k">do</span>
+</span><span class='line'><span class="n">match</span> <span class="s1">&#39;/route&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;static_pages#route&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:route</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[jekyll-s3]]></title>
-    <link href="http://cloudkickr.github.com/blog/2012/08/02/new-post/"/>
+    <link href="http://cloudkickr.github.com/blog/2012/08/02/using-jekyll-s3/"/>
     <updated>2012-08-02T08:52:00-04:00</updated>
-    <id>http://cloudkickr.github.com/blog/2012/08/02/new-post</id>
+    <id>http://cloudkickr.github.com/blog/2012/08/02/using-jekyll-s3</id>
     <content type="html"><![CDATA[
 
 <figure class='code'><figcaption><span>bucket policy - bucketpolicy.js </span></figcaption>

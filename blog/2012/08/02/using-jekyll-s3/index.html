@@ -5,11 +5,25 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruby on Rails Deployment: Gitlab - cloudkickr</title>
+  <title>jekyll-s3 - cloudkickr</title>
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="Cloudkickr is pleased to tell about its recent successful GitLab deployment. GitlabHQ is for anyone managing project source code or interested in &hellip;">
+  <meta name="description" content="bucket policy - bucketpolicy.js 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+{ &quot;Version&quot;: &quot;2008-10-17&quot;, &quot;Statement&quot;: [ { &quot;Sid &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab">
+  <link rel="canonical" href="http://cloudkickr.github.com/blog/2012/08/02/using-jekyll-s3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +85,7 @@
   
   <header>
     
-      <h1 class="entry-title">Ruby on Rails Deployment: Gitlab</h1>
+      <h1 class="entry-title">Jekyll-s3</h1>
     
     
       <p class="meta">
@@ -87,16 +101,48 @@
   
 
 
-<time datetime="2011-12-30T21:50:00-05:00" pubdate data-updated="true">Dec 30<span>th</span>, 2011</time>
+<time datetime="2012-08-02T08:52:00-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Cloudkickr is pleased to tell about its recent successful GitLab deployment. <a target="_blank" href="http://gitlabhq.com/">GitlabHQ</a> is for anyone managing project source code or interested in greater version-control and visibility with Git. Based on <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a>, GitLab is a free git repository management app. It&#8217;s your own lite app for projects/repositories hosting on your server. Moreover, it&#8217;s fast, secure and a stable solution built straight off the <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a> framework.</p>
+<div class="entry-content">
 
-<p>See a live demo of cloudkickr&#8217;s deployment at <a href="http://fresh.gs" target="_blank">fresh.gs</a>.</p>
+<figure class='code'><figcaption><span>bucket policy - bucketpolicy.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;2008-10-17&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;Statement&quot;</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">{</span>
+</span><span class='line'>          <span class="s2">&quot;Sid&quot;</span><span class="o">:</span> <span class="s2">&quot;PublicReadGetObject&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="s2">&quot;Effect&quot;</span><span class="o">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="s2">&quot;Principal&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>              <span class="s2">&quot;AWS&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
+</span><span class='line'>          <span class="p">},</span>
+</span><span class='line'>          <span class="s2">&quot;Action&quot;</span><span class="o">:</span> <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="s2">&quot;arn:aws:s3:::yourbucketnamehere.com/*&quot;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
 
 
@@ -119,21 +165,15 @@
   
 
 
-<time datetime="2011-12-30T21:50:00-05:00" pubdate data-updated="true">Dec 30<span>th</span>, 2011</time>
+<time datetime="2012-08-02T08:52:00-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/github/'>Github</a>, <a class='category' href='/blog/categories/news/'>News</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab/" data-via="bcardan" data-counturl="http://cloudkickr.github.com/blog/2011/12/30/ruby-on-rails-deployment-gitlab/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cloudkickr.github.com/blog/2012/08/02/using-jekyll-s3/" data-via="bcardan" data-counturl="http://cloudkickr.github.com/blog/2012/08/02/using-jekyll-s3/" >Tweet</a>
   
   
   
@@ -142,10 +182,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/12/30/surfacing-from-source/" title="Previous Post: Surfacing from Source">&laquo; Surfacing from Source</a>
+        <a class="basic-alignment left" href="/blog/2012/07/30/one-small-commit/" title="Previous Post: One small commit">&laquo; One small commit</a>
       
       
-        <a class="basic-alignment right" href="/blog/2011/12/31/happy-new-year/" title="next Post: Happy New Year!">Happy New Year! &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/08/08/routes/" title="next Post: fix your routes">fix your routes &raquo;</a>
       
     </p>
   </footer>

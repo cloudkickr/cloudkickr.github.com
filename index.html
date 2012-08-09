@@ -9,21 +9,11 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="bucket policy - bucketpolicy.js 1
+  <meta name="description" content="Named routes are key to rails 3. Use the :as parameter. named route - routes.rb 1
 2
 3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-{ &quot;Version&quot;: &quot;2008-10-17&quot;, &quot;Statement&quot;: [ { &quot;Sid &hellip;">
+YourApp::Application.routes.draw do
+match &#39;/route&#39; =&gt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,7 +78,53 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/08/02/new-post/">Jekyll-s3</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/08/08/routes/">Fix Your Routes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-08T23:51:00-04:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Named routes are key to rails 3. Use the :as parameter.</p>
+
+<figure class='code'><figcaption><span>named route - routes.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">YourApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span> <span class="k">do</span>
+</span><span class='line'><span class="n">match</span> <span class="s1">&#39;/route&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;static_pages#route&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:route</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/02/using-jekyll-s3/">Jekyll-s3</a></h1>
     
     
       <p class="meta">
@@ -630,7 +666,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/08/02/new-post/">jekyll-s3</a>
+        <a href="/blog/2012/08/08/routes/">fix your routes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/02/using-jekyll-s3/">jekyll-s3</a>
       </li>
     
       <li class="post">
@@ -643,10 +683,6 @@
     
       <li class="post">
         <a href="/blog/2012/07/29/jquery-effects/">some jQuery effects</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/19/sopa-whats-up-with-that/">SOPA: What&#8217;s up with that?</a>
       </li>
     
   </ul>
