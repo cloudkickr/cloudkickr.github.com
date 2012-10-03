@@ -4,7 +4,7 @@
   <title><![CDATA[Category: VM | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/vm/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-03T10:38:03-04:00</updated>
+  <updated>2012-10-03T10:42:29-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<iframe width="560" height="315" src="http://www.youtube.com/embed/bsGgfUreyZw" frameborder="0" allowfullscreen></iframe>
 
 
-<p>Renown V8 engineers, Lars Bak and Kasper Lund: The two creators of Dart discuss rationale behind Dart's design and its impact on web scalability and performance. Dart offers an alternative approach to building complex JavaScript-based web applications.</p>
+<p>Renown V8 engineers, Lars Bak and Kasper Lund: the two creators of Dart discuss rationale behind Dart's design and its impact on web scalability and performance. Dart offers an alternative approach to building complex JavaScript-based web applications.</p>
 
 <p>Before Dart they built Google Chrome's V8 Engine, an unprecedented runtime environment on which the Node.js platform is built. Lars Bak has over 26 years of Object Oriented programming experience on Virtual Machines.</p>
 
