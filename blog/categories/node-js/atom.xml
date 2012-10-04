@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Node.js | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/node-js/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-04T15:42:46-04:00</updated>
+  <updated>2012-10-04T17:49:26-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,15 +18,21 @@
     <link href="http://cloudkickr.github.com/blog/2012/10/04/whats-right-with-javascript/"/>
     <updated>2012-10-04T05:15:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/10/04/whats-right-with-javascript</id>
-    <content type="html"><![CDATA[<p>Node.js is right. And uh.. right or wrong, everyone needs JavaScript if they hope to use their beloved internet in a meaningful way.</p>
+    <content type="html"><![CDATA[<p><a href="http://nodejs.org/">Node.js</a> is right. And uh.. right or wrong, everyone needs JavaScript if they hope to use their beloved internet in a meaningful way.</p>
 
-<p>My interest in JavaScript grows everyday. The language is responsible for full stack web apps, just like you expect from Ruby on Rails, backed by databases, complete with request routers and their natural corollary, sometimes implemented in a controller: management of the response object.</p>
+<p>My interest in JavaScript grows everyday. The language is responsible for full stack web apps, just like you expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases. Node's Express is the equivalent of Ruby's Rails. Both frameworks support request routers and the request's natural corollary, sometimes implemented in a controller in Rails, namely, management of the response object. In substantial ways the frameworks are similar, but in more significant ways they are totally different. For example, the right way to think about programming in Rails would not be appropriate or effective in Node. Some of the stuff Node does is nothing like Ruby on Rails. Many of Node's callback functions implement an event-loop with asynchronous executions totally unconcerned about linear, normal structure or the procedural sequence of logic that I was used to before Node.</p>
+
+<p>We can control the event loop by implementing iterations in a nested fashion. By nesting functions within functions, you trap the return before you're done executing something you want to see happen. So that's one way that it's not as unmanagable as it sounds at first.</p>
 
 <p>The server below stores keys and values in Redis for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
-<p>The file uploading and content management behind the auth layer connect to MongoDB. Really with the more complex stuff like auth logic, there's a reference point in the middleware to modules nearby in the server's root folder that contain said logic.</p>
+<p>The file uploading and content management behind the auth layer connect to MongoDB. With increasing complexity (auth logic is a perfect example of complexity), we can interact directly with the framework's middleware in order to control the program in ways I never considered using in Rails.</p>
 
-<p>Node was designed around two very fundamental concepts of network engineering and in general data transport. These two fundamentals of data flow are better known as <code>the request</code> made and <code>the response</code> from the server. Node basically forces the developer to deal with each side of the coin. Because of that, and really because of the way Node works, it's impossible to escape or avoid very easily, a deeper understanding of the technology that makes the internet happen.</p>
+<p>Node got me to think of Middleware as the mote that surrounds a Castle. When certain processes need special attention, like session management, we can pull up the drawbridge and exercise a level of control not available in other frameworks I have seen.</p>
+
+<p>Keeping with the authentication topic, I set a reference point in the middleware to modules nearby in the server's root folder. By separating logic out into modules things are decoupled and in general easier to manage. Ruby does a similar thing through inheritance coming down from the base class and you can do meta programming in a modular way as well. The node package manager downloads all your modules. Those are Gems in Ruby. Instead of running the bundle command, we're running <code>npm i</code>.  A lot of people write out <code>npm install</code> but just as you don't have to do that in Rails with the full <code>bundle install</code>, you can just run bundle, same deal in Node. <code>npm i</code> is all it takes. Of course you have to know that first.</p>
+
+<p>So we declare dependencies by specifying the modules directory at the start our Node file. In JavaScript it's called variable hoisting, so that our runtime stays predictable and most efficient. Then we get into middleware and finally launch the server. Take a look the Express file.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>express 3 - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -444,6 +450,10 @@
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Node was designed around two very fundamental concepts of network engineering and data transport. These two fundamentals of data flow are better known as <code>the request</code> made and <code>the response</code> from the server. Node basically forces the developer to deal with each side of the coin.</p>
+
+<p>Because of that, because of the way Node revolves around processing the request and responses, it's impossible to escape a deeper understanding of the core concepts underlying the technology we have that makes the internet happen. In that way, I think Node is more lower level than Rails, but it was built in a way that doesn't incurr more inconvenience or add extra steps on the developer. If anything I think there are fewer steps and development can be faster and more precise in Node.</p>
 ]]></content>
   </entry>
   
