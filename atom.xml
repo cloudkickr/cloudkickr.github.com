@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-04T15:27:35-04:00</updated>
+  <updated>2012-10-04T15:42:46-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -22,11 +22,11 @@
 
 <p>My interest in JavaScript grows everyday. The language is responsible for full stack web apps, just like you expect from Ruby on Rails, backed by databases, complete with request routers and their natural corollary, sometimes implemented in a controller: management of the response object.</p>
 
-<p>The server below stores keys and values in Redis for Session management during user authentication. Redis is good at keeping track of state, its non-blocking and super fast.</p>
+<p>The server below stores keys and values in Redis for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
 <p>The file uploading and content management behind the auth layer connect to MongoDB. Really with the more complex stuff like auth logic, there&#8217;s a reference point in the middleware to modules nearby in the server&#8217;s root folder that contain said logic.</p>
 
-<p>It&#8217;s clear to me just from using Node.js all summer long that it was designed around two very fundamental concepts that drive network engineering and the web: a request made and the response from the server. Node basically forces the developer to deal with each side of the coin. Because of that, and really because of the way Node works, it&#8217;s impossible to escape, or avoid very easily, a deeper understanding of the technology that makes the internet happen.</p>
+<p>Node was designed around two very fundamental concepts of network engineering and in general data transport. These two fundamentals of data flow are better known as <code>the request</code> made and <code>the response</code> from the server. Node basically forces the developer to deal with each side of the coin. Because of that, and really because of the way Node works, it&#8217;s impossible to escape or avoid very easily, a deeper understanding of the technology that makes the internet happen.</p>
 
 <figure class='code'><figcaption><span>express 3 - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
