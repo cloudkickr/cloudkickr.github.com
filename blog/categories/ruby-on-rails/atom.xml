@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: JavaScript | cloudkickr]]></title>
-  <link href="http://cloudkickr.github.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Ruby on Rails | cloudkickr]]></title>
+  <link href="http://cloudkickr.github.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
   <updated>2012-10-04T15:27:35-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
@@ -444,72 +444,6 @@
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[What's wrong with JavaScript?]]></title>
-    <link href="http://cloudkickr.github.com/blog/2012/10/03/whats-wrong-with-js/"/>
-    <updated>2012-10-03T10:01:00-04:00</updated>
-    <id>http://cloudkickr.github.com/blog/2012/10/03/whats-wrong-with-js</id>
-    <content type="html"><![CDATA[<iframe width="560" height="315" src="http://www.youtube.com/embed/bsGgfUreyZw" frameborder="0" allowfullscreen></iframe>
-
-
-<p>Renown V8 engineers, Lars Bak and Kasper Lund: the two creators of Dart discuss rationale behind Dart's design and its impact on web scalability and performance. Dart offers an alternative approach to building complex JavaScript-based web applications.</p>
-
-<p>Before Dart they built Google Chrome's V8 Engine, an unprecedented runtime environment on which the Node.js platform is built. Lars Bak has over 26 years of Object Oriented programming experience on Virtual Machines.</p>
-
-<p>These incredible engineers present how Dart helps developers innovate by increasing their productivity without breaking backwards compatibility. They discuss how Dart compiles to JavaScript, and in the process sling a veiled insult or two at CoffeeScript.</p>
-
-<p>Right, well, here's a link to <a href="https://developers.google.com/io/">the I/O 2012 sessions</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[some jQuery effects]]></title>
-    <link href="http://cloudkickr.github.com/blog/2012/07/29/jquery-effects/"/>
-    <updated>2012-07-29T02:27:00-04:00</updated>
-    <id>http://cloudkickr.github.com/blog/2012/07/29/jquery-effects</id>
-    <content type="html"><![CDATA[<p>I need to reference some simple JavaScript over here for a site I'm building. We're going to review the basic jQuery effects and end up explaining method syntax.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Hide Method - hide.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-This method hides all the elements in a jQuery object. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Timed Hide - hide.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Passing in the time constraint hides elements in a jQuery object over the duration with an optional easing style. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>hide with function - hide.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Hide the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.<br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Show Method - show.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-This method shows all the elements in a jQuery object. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Timed show - show.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Passing in the time constraint shows elements in a jQuery object over the duration with an optional easing style. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>show with function - show.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Show the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.</p>
 ]]></content>
   </entry>
   
