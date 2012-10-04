@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-03T10:42:29-04:00</updated>
+  <updated>2012-10-04T09:45:20-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What's right with JavaScript?]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/04/new-post/"/>
+    <updated>2012-10-04T05:15:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/04/new-post</id>
+    <content type="html"><![CDATA[<p>Node.js is right. And uh.. everyone in the world needs it to use their beloved internet.</p>
+
+<p>My interest in the JavaScript langauge grows everyday.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What's wrong with JavaScript?]]></title>
