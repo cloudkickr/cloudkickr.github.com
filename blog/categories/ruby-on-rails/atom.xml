@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-04T18:10:48-04:00</updated>
+  <updated>2012-10-04T18:18:05-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -18,19 +18,19 @@
     <link href="http://cloudkickr.github.com/blog/2012/10/04/whats-right-with-javascript/"/>
     <updated>2012-10-04T05:15:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/10/04/whats-right-with-javascript</id>
-    <content type="html"><![CDATA[<p><a href="http://nodejs.org/">Node.js</a> is right. Uh.. everyone needs JavaScript if they want to use the internet in a meaningful way. One reason my interest in JavaScript grows everyday.</p>
+    <content type="html"><![CDATA[<p>Everyone needs JavaScript if they want to use the internet.</p>
 
 <p>The language is responsible for full stack web apps, just like you expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: management of the response object.</p>
 
-<p>Some of the stuff Node does is nothing like anything I've ever done before. Callback functions implement event-loops with asynchronous executions unconcerned about linear structures of logic.</p>
+<p>Node is wild. Like nothing I've ever done before. Callback functions implement event-loops with asynchronous executions unconcerned about linear structures of logic.</p>
 
-<p>We can control the event loop by iterating nested functions. By nesting functions within functions, you trap the return before you're done executing something you want to see happen. The server below stores keys and values in Redis for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
+<p>Control the event loop by iterating nested functions. Functions within functions trap the return so we stay in control. The server below stores keys and values in Redis for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
-<p>The file uploading and content management behind the auth layer are supported by MongoDB. With increasing complexity (auth logic is a perfect example of complexity), we can interact with Express middleware in order to control the program in ways I never knew before using Node.</p>
+<p>File uploading and content management behind the auth layer are supported by MongoDB. With increasing complexity, the framework below, Express, uses its middleware in order to control the program in ways I never knew before using Node and Express.</p>
 
 <p>Node got me to think of middleware as the mote that surrounds a Castle. When certain processes need special attention, like session management, we can pull up the drawbridge and exercise a level of control not available in other stuff I have seen.</p>
 
-<p>I keep track of a reference point there in the middleware and ensure that all the logic I need happens before in modules nearby in the server's root folder. By separating logic out into modules things are decoupled and in general easier to manage. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient.</p>
+<p>I keep track of a reference point there in the middleware and ensure that what I need happens before in modules nearby in the server's root folder. By separating logic out into modules things are decoupled and in general easier to manage. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient, reducing the chances of unintended memory leak.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>express 3 - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -212,7 +212,7 @@
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="err">/&lt;em&gt;*</span>
-</span><span class='line'> <span class="o">*</span> <span class="nx">Module</span> <span class="nx">dependencies</span><span class="p">.</span>
+</span><span class='line'> <span class="o">*</span> <span class="nx">Module</span> <span class="nx">dependencies</span><span class="p">,</span> <span class="k">this</span> <span class="nx">is</span> <span class="nx">variable</span> <span class="nx">hoisting</span> <span class="kd">with</span> <span class="nx">the</span> <span class="nx">commas</span> <span class="nx">replacing</span> <span class="nx">the</span> <span class="nx">need</span> <span class="k">for</span> <span class="kd">var</span><span class="p">.</span>
 </span><span class='line'> <span class="o">&lt;</span><span class="sr">/em&gt;/</span>
 </span><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">)</span>
