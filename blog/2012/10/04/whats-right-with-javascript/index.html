@@ -9,7 +9,7 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="Node.js is right. And uh.. right or wrong, everyone needs JavaScript if they hope to use their beloved internet in a meaningful way. My interest in &hellip;">
+  <meta name="description" content="Node.js is right. And right or wrong, everyone needs JavaScript if they hope to use the internet in a meaningful way. Anyway, my interest in &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,21 +99,23 @@
   </header>
 
 
-<div class="entry-content"><p><a href="http://nodejs.org/">Node.js</a> is right. And uh.. right or wrong, everyone needs JavaScript if they hope to use their beloved internet in a meaningful way.</p>
+<div class="entry-content"><p><a href="http://nodejs.org/">Node.js</a> is right. And right or wrong, everyone needs JavaScript if they hope to use the internet in a meaningful way.</p>
 
-<p>My interest in JavaScript grows everyday. The language is responsible for full stack web apps, just like you expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases. Node&#8217;s Express is the equivalent of Ruby&#8217;s Rails. Both frameworks support request routers and the request&#8217;s natural corollary, sometimes implemented in a controller in Rails, namely, management of the response object. In substantial ways the frameworks are similar, but in more significant ways they are totally different. For example, the right way to think about programming in Rails would not be appropriate or effective in Node. Some of the stuff Node does is nothing like Ruby on Rails. Many of Node&#8217;s callback functions implement an event-loop with asynchronous executions totally unconcerned about linear, normal structure or the procedural sequence of logic that I was used to before Node.</p>
+<p>Anyway, my interest in JavaScript grows everyday.</p>
+
+<p>The language is responsible for full stack web apps, just like you expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: <em>management of the response object<em>.</p>
+
+<p>Some of the stuff Node does is nothing like anything I&#8217;ve ever done before. Node&#8217;s callback functions implement an event-loop with asynchronous executions totally unconcerned about linear, normal structure of logic.</p>
 
 <p>We can control the event loop by implementing iterations in a nested fashion. By nesting functions within functions, you trap the return before you&#8217;re done executing something you want to see happen. So that&#8217;s one way that it&#8217;s not as unmanagable as it sounds at first.</p>
 
 <p>The server below stores keys and values in Redis for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
-<p>The file uploading and content management behind the auth layer connect to MongoDB. With increasing complexity (auth logic is a perfect example of complexity), we can interact directly with the framework&#8217;s middleware in order to control the program in ways I never considered using in Rails.</p>
+<p>The file uploading and content management behind the auth layer are supported by MongoDB. With increasing complexity (auth logic is a perfect example of complexity), we can interact directly with the framework&#8217;s middleware in order to control the program in ways I never considered before using Node.</p>
 
-<p>Node got me to think of Middleware as the mote that surrounds a Castle. When certain processes need special attention, like session management, we can pull up the drawbridge and exercise a level of control not available in other frameworks I have seen.</p>
+<p>Node got me to think of Middleware as the mote that surrounds a Castle. When certain processes need special attention, like session management, we can pull up the drawbridge and exercise a level of control not available in other stuff I have seen.</p>
 
-<p>Keeping with the authentication topic, I set a reference point in the middleware to modules nearby in the server&#8217;s root folder. By separating logic out into modules things are decoupled and in general easier to manage. Ruby does a similar thing through inheritance coming down from the base class and you can do meta programming in a modular way as well. The node package manager downloads all your modules. Those are Gems in Ruby. Instead of running the bundle command, we&#8217;re running <code>npm i</code>.  A lot of people write out <code>npm install</code> but just as you don&#8217;t have to do that in Rails with the full <code>bundle install</code>, you can just run bundle, same deal in Node. <code>npm i</code> is all it takes. Of course you have to know that first.</p>
-
-<p>So we declare dependencies by specifying the modules directory at the start our Node file. In JavaScript it&#8217;s called variable hoisting, so that our runtime stays predictable and most efficient. Then we get into middleware and finally launch the server. Take a look the Express file.</p>
+<p>Keeping with the authentication topic, I set a reference point in the middleware to modules nearby in the server&#8217;s root folder. By separating logic out into modules things are decoupled and in general easier to manage. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient.</p>
 
 <figure class='code'><figcaption><span>express 3 - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -282,38 +284,6 @@
 <span class='line-number'>164</span>
 <span class='line-number'>165</span>
 <span class='line-number'>166</span>
-<span class='line-number'>167</span>
-<span class='line-number'>168</span>
-<span class='line-number'>169</span>
-<span class='line-number'>170</span>
-<span class='line-number'>171</span>
-<span class='line-number'>172</span>
-<span class='line-number'>173</span>
-<span class='line-number'>174</span>
-<span class='line-number'>175</span>
-<span class='line-number'>176</span>
-<span class='line-number'>177</span>
-<span class='line-number'>178</span>
-<span class='line-number'>179</span>
-<span class='line-number'>180</span>
-<span class='line-number'>181</span>
-<span class='line-number'>182</span>
-<span class='line-number'>183</span>
-<span class='line-number'>184</span>
-<span class='line-number'>185</span>
-<span class='line-number'>186</span>
-<span class='line-number'>187</span>
-<span class='line-number'>188</span>
-<span class='line-number'>189</span>
-<span class='line-number'>190</span>
-<span class='line-number'>191</span>
-<span class='line-number'>192</span>
-<span class='line-number'>193</span>
-<span class='line-number'>194</span>
-<span class='line-number'>195</span>
-<span class='line-number'>196</span>
-<span class='line-number'>197</span>
-<span class='line-number'>198</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Module dependencies.</span>
 </span><span class='line'><span class="cm"> */</span>
@@ -480,8 +450,46 @@
 </span><span class='line'>    <span class="nx">app</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;photos&#39;</span><span class="p">,</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/public/photos&#39;</span><span class="p">);</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'><span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/**</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Node was designed around two very fundamental concepts of network engineering and data transport. These two fundamentals of data flow are better known as <code>the request</code> made and <code>the response</code> from the server. Node basically forces the developer to deal with each side of the coin.</p>
+
+<p>Because of that, because of the way Node revolves around processing the request and responses, it&#8217;s impossible to escape a deeper understanding of the core concepts underlying the technology we have that makes the internet happen. In that way, I think Node is more lower level than Rails, but it was built in a way that doesn&#8217;t incurr more inconvenience or add extra steps on the developer. If anything I think there are fewer steps and development can be faster and more precise in Node.</p>
+
+<figure class='code'><figcaption><span>express 3 continued - app.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Routing.</span>
 </span><span class='line'><span class="cm"> */</span>
 </span><span class='line'>
@@ -515,9 +523,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Node was designed around two very fundamental concepts of network engineering and data transport. These two fundamentals of data flow are better known as <code>the request</code> made and <code>the response</code> from the server. Node basically forces the developer to deal with each side of the coin.</p>
 
-<p>Because of that, because of the way Node revolves around processing the request and responses, it&#8217;s impossible to escape a deeper understanding of the core concepts underlying the technology we have that makes the internet happen. In that way, I think Node is more lower level than Rails, but it was built in a way that doesn&#8217;t incurr more inconvenience or add extra steps on the developer. If anything I think there are fewer steps and development can be faster and more precise in Node.</p>
 </div>
 
 
