@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-04T18:07:12-04:00</updated>
+  <updated>2012-10-04T18:10:48-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -368,9 +368,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Node was designed around two very fundamental concepts of network engineering and data transport. These two fundamentals of data flow are better known as <code>the request</code> made and <code>the response</code> from the server. Node basically forces the developer to deal with each side of the coin.</p>
+<p>Node was designed around two very fundamental concepts of network engineering and data transport. These fundamentals of data flow are better known as <code>the request</code> made by a browser and <code>the response</code> from the server. Node forces the developer to deal with each side of the coin.</p>
 
-<p>Because of that, because of the way Node revolves around processing the request and responses, it&#8217;s impossible to escape a deeper understanding of the core concepts underlying the technology we have that makes the internet happen. In that way, I think Node is more lower level than Rails, but it was built in a way that doesn&#8217;t incurr more inconvenience or add extra steps on the developer. If anything I think there are fewer steps and development can be faster and more precise in Node.</p>
+<p>Because of that, and the way Node revolves around processing the request and responses, it&#8217;s impossible to escape a deeper understanding of our technology that makes the internet happen.</p>
 
 <figure class='code'><figcaption><span>express 3 continued - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
