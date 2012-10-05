@@ -9,7 +9,8 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="Renown V8 engineers, Lars Bak and Kasper Lund: the two creators of Dart discuss rationale behind Dart&#8217;s design and its impact on web &hellip;">
+  <meta name="description" content="
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -73,6 +74,42 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/05/new-post/">New-post</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-05T00:52:00-04:00" pubdate data-updated="true">Oct 5<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -155,7 +192,65 @@
 
 <p>Control the event loop by iterating nested functions. Functions within functions keep enuables under control. The server below stores keys and values in <a href="http://redis.io/">Redis</a> for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
-<p>File uploading and content management behind the auth layer are supported by MongoDB. With increasing complexity, the framework below, Express, uses middleware in order to control the program in ways I never knew before using Node and Express.</p>
+<figure class='code'><figcaption><span>excerpt from redis module - user.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;redis&#39;</span><span class="p">)</span>
+</span><span class='line'>   <span class="p">,</span> <span class="nx">bcrypt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bcrypt&#39;</span><span class="p">)</span>
+</span><span class='line'>   <span class="p">,</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
+</span><span class='line'>  
+</span><span class='line'><span class="kd">function</span> <span class="nx">User</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'> <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>   <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">User</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">save</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">){</span>
+</span><span class='line'> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>   <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+</span><span class='line'> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>   <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span><span class='line'>   <span class="nx">db</span><span class="p">.</span><span class="nx">incr</span><span class="p">(</span><span class="s1">&#39;user:ids&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">id</span><span class="p">){</span>
+</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+</span><span class='line'>     <span class="nx">self</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+</span><span class='line'>     <span class="nx">self</span><span class="p">.</span><span class="nx">hashPassword</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+</span><span class='line'>      <span class="nx">self</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
+</span><span class='line'>     <span class="p">});</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// all redis-backed auth logic via module.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>File uploading and content management behind the auth layer are supported by MongoDB. I&#8217;m a fan of regular Mongo with the npm BSON install, but for this project I went for <a href="http://mongoosejs.com/">Mongoose</a>.</p>
 
 <p>By separating logic out into modules we keep our code decoupled the way we like. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient, reducing the chances of unintended memory leak.</p>
 
@@ -297,36 +392,6 @@
 <span class='line-number'>135</span>
 <span class='line-number'>136</span>
 <span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-<span class='line-number'>155</span>
-<span class='line-number'>156</span>
-<span class='line-number'>157</span>
-<span class='line-number'>158</span>
-<span class='line-number'>159</span>
-<span class='line-number'>160</span>
-<span class='line-number'>161</span>
-<span class='line-number'>162</span>
-<span class='line-number'>163</span>
-<span class='line-number'>164</span>
-<span class='line-number'>165</span>
-<span class='line-number'>166</span>
-<span class='line-number'>167</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Module dependencies. </span>
 </span><span class='line'><span class="cm"> * Variable hoisting, replacing var with a comma.</span>
@@ -359,36 +424,6 @@
 </span><span class='line'><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Connect to Databases.</span>
 </span><span class='line'><span class="cm"> */</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">var</span> <span class="nx">redis</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;redis&#39;</span><span class="p">)</span>
-</span><span class='line'>   <span class="p">,</span> <span class="nx">bcrypt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;bcrypt&#39;</span><span class="p">)</span>
-</span><span class='line'>   <span class="p">,</span> <span class="nx">db</span> <span class="o">=</span> <span class="nx">redis</span><span class="p">.</span><span class="nx">createClient</span><span class="p">();</span>
-</span><span class='line'>  
-</span><span class='line'><span class="kd">function</span> <span class="nx">User</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'> <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>   <span class="k">this</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span><span class='line'> <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">User</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">save</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">fn</span><span class="p">){</span>
-</span><span class='line'> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>   <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
-</span><span class='line'> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>   <span class="kd">var</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-</span><span class='line'>   <span class="nx">db</span><span class="p">.</span><span class="nx">incr</span><span class="p">(</span><span class="s1">&#39;user:ids&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">id</span><span class="p">){</span>
-</span><span class='line'>     <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-</span><span class='line'>     <span class="nx">self</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
-</span><span class='line'>     <span class="nx">self</span><span class="p">.</span><span class="nx">hashPassword</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-</span><span class='line'>      <span class="nx">self</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span>
-</span><span class='line'>     <span class="p">});</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'> <span class="p">}</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// handling more redis-based auth logic in modules.</span>
-</span><span class='line'>
-</span><span class='line'>
 </span><span class='line'>
 </span><span class='line'><span class="c1">// now time to connect to MongoDB.</span>
 </span><span class='line'>
@@ -1043,42 +1078,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/31/happy-new-year/">Happy New Year!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-12-31T19:23:00-05:00" pubdate data-updated="true">Dec 31<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&#8230;from <a href="http://bent-cardan.com" target="_blank">Bent Cardan</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1094,6 +1093,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/05/new-post/">new-post</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/04/whats-right-with-javascript/">What&#8217;s wrong with JavaScript?</a>
       </li>
     
@@ -1107,10 +1110,6 @@
     
       <li class="post">
         <a href="/blog/2012/08/02/using-jekyll-s3/">jekyll-s3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/07/30/one-small-commit/">One small commit</a>
       </li>
     
   </ul>
