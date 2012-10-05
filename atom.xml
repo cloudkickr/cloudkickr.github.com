@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-05T02:04:53-04:00</updated>
+  <updated>2012-10-05T02:12:56-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -53,7 +53,7 @@
     <id>http://cloudkickr.github.com/blog/2012/10/03/whats-wrong-with-js</id>
     <content type="html"><![CDATA[<p>If we want to use the internet, well, then we need JavaScript.</p>
 
-<p>The language is responsible for full stack web apps that perform as well as or even many times faster than what we would expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: management of the response object.</p>
+<p>The language is responsible for full stack web apps that perform as well as or even many times faster than what we would expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: the response object.</p>
 
 <p>Node is wild. We write Node Apps in JavaScript but it&#8217;s like nothing I&#8217;ve ever done before. Callback functions implement event-loops with asynchronous executions unconcerned about linear structures of logic.</p>
 
