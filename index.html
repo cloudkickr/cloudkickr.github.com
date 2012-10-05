@@ -9,7 +9,7 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="If we want to use the internet, well, then we need JavaScript. The language is responsible for full stack web apps, just like you expect from Ruby on &hellip;">
+  <meta name="description" content="Renown V8 engineers, Lars Bak and Kasper Lund: the two creators of Dart discuss rationale behind Dart&#8217;s design and its impact on web &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,7 +79,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/10/04/whats-right-with-javascript/">What&#8217;s Right With JavaScript?</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/10/04/whats-right-with-javascript/">What&#8217;s Wrong With JavaScript?</a></h1>
     
     
       <p class="meta">
@@ -102,19 +102,62 @@
   </header>
 
 
+  <div class="entry-content"><iframe width="560" height="315" src="http://www.youtube.com/embed/bsGgfUreyZw" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Renown V8 engineers, Lars Bak and Kasper Lund: the two creators of Dart discuss rationale behind Dart&#8217;s design and its impact on web scalability and performance. Dart offers an alternative approach to building complex JavaScript-based web applications.</p>
+
+<p>Before Dart they built Google Chrome&#8217;s V8 Engine, an unprecedented runtime environment on which the Node.js platform is built. Lars Bak has over 26 years of Object Oriented programming experience on Virtual Machines.</p>
+
+<p>These incredible engineers present how Dart helps developers innovate by increasing their productivity without breaking backwards compatibility. They discuss how Dart compiles to JavaScript, and in the process sling a veiled insult or two at CoffeeScript.</p>
+
+<p>Right, well, here&#8217;s a link to <a href="https://developers.google.com/io/">the I/O 2012 sessions</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/03/whats-wrong-with-js/">Some Thoughts on JavaScript</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-03T10:01:00-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
   <div class="entry-content"><p>If we want to use the internet, well, then we need JavaScript.</p>
 
-<p>The language is responsible for full stack web apps, just like you expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: management of the response object.</p>
+<p>The language is responsible for full stack web apps that perform as well as or even many times faster than what we would expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: management of the response object.</p>
 
-<p>Node is wild. Like nothing I&#8217;ve ever done before. Callback functions implement event-loops with asynchronous executions unconcerned about linear structures of logic.</p>
+<p>Node is wild. We write Node Apps in JavaScript but it&#8217;s like nothing I&#8217;ve ever done before. Callback functions implement event-loops with asynchronous executions unconcerned about linear structures of logic.</p>
 
-<p>Control the event loop by iterating nested functions. Functions within functions trap the return so we stay in control. The server below stores keys and values in Redis for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
+<p>Control the event loop by iterating nested functions. Functions within functions keep enuables under control. The server below stores keys and values in <a href="http://redis.io/">Redis</a> for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
-<p>File uploading and content management behind the auth layer are supported by MongoDB. With increasing complexity, the framework below, Express, uses its middleware in order to control the program in ways I never knew before using Node and Express.</p>
+<p>File uploading and content management behind the auth layer are supported by MongoDB. With increasing complexity, the framework below, Express, uses middleware in order to control the program in ways I never knew before using Node and Express.</p>
 
-<p>Node got me to think of middleware as the mote that surrounds a Castle. When certain processes need special attention, like session management, we can pull up the drawbridge and exercise a level of control not available in other stuff I have seen.</p>
-
-<p>I keep track of a reference point there in the middleware and ensure that what I need happens before in modules nearby in the server&#8217;s root folder. By separating logic out into modules things are decoupled and in general easier to manage. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient, reducing the chances of unintended memory leak.</p>
+<p>By separating logic out into modules we keep our code decoupled the way we like. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient, reducing the chances of unintended memory leak.</p>
 
 <figure class='code'><figcaption><span>express 3 - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -283,8 +326,10 @@
 <span class='line-number'>164</span>
 <span class='line-number'>165</span>
 <span class='line-number'>166</span>
+<span class='line-number'>167</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="cm">/**</span>
-</span><span class='line'><span class="cm"> * Module dependencies, this is variable hoisting with the commas replacing the need for var.</span>
+</span><span class='line'><span class="cm"> * Module dependencies. </span>
+</span><span class='line'><span class="cm"> * Variable hoisting, replacing var with a comma.</span>
 </span><span class='line'><span class="cm"> */</span>
 </span><span class='line'><span class="kd">var</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">)</span>
@@ -452,9 +497,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Node was designed around two very fundamental concepts of network engineering and data transport. These fundamentals of data flow are better known as <code>the request</code> made by a browser and <code>the response</code> from the server. Node forces the developer to deal with each side of the coin.</p>
-
-<p>Because of that, and the way Node revolves around processing the request and responses, it&#8217;s impossible to escape a deeper understanding of our technology that makes the internet happen.</p>
+<p>Node was designed around fundamental concepts of network engineering and data transport. These fundamentals of data flow are better known as <code>the request</code> made by a browser and <code>the response</code> from the server. Node forces the developer to deal with each side of the coin.</p>
 
 <figure class='code'><figcaption><span>express 3 continued - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -523,51 +566,6 @@
 
 
 
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/03/whats-wrong-with-js/">What&#8217;s Wrong With JavaScript?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-03T10:01:00-04:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><iframe width="560" height="315" src="http://www.youtube.com/embed/bsGgfUreyZw" frameborder="0" allowfullscreen></iframe>
-
-
-<p>Renown V8 engineers, Lars Bak and Kasper Lund: the two creators of Dart discuss rationale behind Dart&#8217;s design and its impact on web scalability and performance. Dart offers an alternative approach to building complex JavaScript-based web applications.</p>
-
-<p>Before Dart they built Google Chrome&#8217;s V8 Engine, an unprecedented runtime environment on which the Node.js platform is built. Lars Bak has over 26 years of Object Oriented programming experience on Virtual Machines.</p>
-
-<p>These incredible engineers present how Dart helps developers innovate by increasing their productivity without breaking backwards compatibility. They discuss how Dart compiles to JavaScript, and in the process sling a veiled insult or two at CoffeeScript.</p>
-
-<p>Right, well, here&#8217;s a link to <a href="https://developers.google.com/io/">the I/O 2012 sessions</a>.</p>
 </div>
   
   
@@ -1096,11 +1094,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/10/04/whats-right-with-javascript/">What&#8217;s right with JavaScript?</a>
+        <a href="/blog/2012/10/04/whats-right-with-javascript/">What&#8217;s wrong with JavaScript?</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/03/whats-wrong-with-js/">What&#8217;s wrong with JavaScript?</a>
+        <a href="/blog/2012/10/03/whats-wrong-with-js/">Some Thoughts On JavaScript</a>
       </li>
     
       <li class="post">
