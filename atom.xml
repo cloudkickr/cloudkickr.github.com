@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-05T02:12:56-04:00</updated>
+  <updated>2012-10-06T18:18:56-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -14,16 +14,33 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Florence + The Machine]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/06/florence/"/>
+    <updated>2012-10-06T18:10:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/06/florence</id>
+    <content type="html"><![CDATA[<p>I love listening to Florence. Perfect background for programming the next big thing!</p>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F49701267&amp;auto_play=false&amp;show_artwork=true&amp;color=5072a6"></iframe>
+
+
+
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F24787124&amp;auto_play=false&amp;show_artwork=true&amp;color=5072a6"></iframe>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The Gemmy]]></title>
-    <link href="http://cloudkickr.github.com/blog/2012/10/05/new-post/"/>
+    <link href="http://cloudkickr.github.com/blog/2012/10/05/the-gemmy/"/>
     <updated>2012-10-05T00:52:00-04:00</updated>
-    <id>http://cloudkickr.github.com/blog/2012/10/05/new-post</id>
+    <id>http://cloudkickr.github.com/blog/2012/10/05/the-gemmy</id>
     <content type="html"><![CDATA[<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F47725512&show_artwork=true"></iframe>
 
 
-
-
 <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F3818721&show_artwork=true"></iframe>
+
+
 
 ]]></content>
   </entry>

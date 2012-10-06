@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: music | cloudkickr]]></title>
+  <link href="http://cloudkickr.github.com/blog/categories/music/atom.xml" rel="self"/>
+  <link href="http://cloudkickr.github.com/"/>
+  <updated>2012-10-06T18:18:56-04:00</updated>
+  <id>http://cloudkickr.github.com/</id>
+  <author>
+    <name><![CDATA[Bent Cardan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Florence + The Machine]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/06/florence/"/>
+    <updated>2012-10-06T18:10:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/06/florence</id>
+    <content type="html"><![CDATA[<p>I love listening to Florence. Perfect background for programming the next big thing!</p>
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F49701267&amp;auto_play=false&amp;show_artwork=true&amp;color=5072a6"></iframe>
+
+
+
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F24787124&amp;auto_play=false&amp;show_artwork=true&amp;color=5072a6"></iframe>
+
+]]></content>
+  </entry>
+  
+</feed>
