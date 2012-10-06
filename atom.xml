@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-06T18:18:56-04:00</updated>
+  <updated>2012-10-06T19:25:24-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -12,6 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Purity Ring]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/06/purity-ring/"/>
+    <updated>2012-10-06T19:23:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/06/purity-ring</id>
+    <content type="html"><![CDATA[<iframe src="http://player.vimeo.com/video/22441978?portrait=0" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Florence + The Machine]]></title>
