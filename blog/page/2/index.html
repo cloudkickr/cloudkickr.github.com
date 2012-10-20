@@ -9,7 +9,7 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="I think Wikipedia said it best. SOPA and PIPA are symptoms of a larger issue. They are misguided solutions to a misunderstood problem. In the U.S. &hellip;">
+  <meta name="description" content="I need to reference some simple JavaScript over here for a site I&#8217;m building. We&#8217;re going to review the basic jQuery effects and end up &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +74,98 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/29/jquery-effects/">Some jQuery Effects</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-29T02:27:00-04:00" pubdate data-updated="true">Jul 29<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I need to reference some simple JavaScript over here for a site I&#8217;m building. We&#8217;re going to review the basic jQuery effects and end up explaining method syntax.</p>
+
+<figure class='code'><figcaption><span>Hide Method - hide.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This method hides all the elements in a jQuery object.</p>
+
+<figure class='code'><figcaption><span>Timed Hide - hide.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Passing in the time constraint hides elements in a jQuery object over the duration with an optional easing style.</p>
+
+<figure class='code'><figcaption><span>hide with function - hide.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Hide the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.</p>
+
+<figure class='code'><figcaption><span>Show Method - show.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This method shows all the elements in a jQuery object.</p>
+
+<figure class='code'><figcaption><span>Timed show - show.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span>
+</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Passing in the time constraint shows elements in a jQuery object over the duration with an optional easing style.</p>
+
+<figure class='code'><figcaption><span>show with function - show.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Show the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -275,6 +367,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/10/19/new-post/">Recommended Reading</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/06/purity-ring/">Purity Ring</a>
       </li>
     
@@ -288,10 +384,6 @@
     
       <li class="post">
         <a href="/blog/2012/10/04/whats-right-with-javascript/">What&#8217;s wrong with JavaScript?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/03/whats-wrong-with-js/">Random Thoughts About JavaScript</a>
       </li>
     
   </ul>

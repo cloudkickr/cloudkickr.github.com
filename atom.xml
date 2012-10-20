@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-06T23:40:04-04:00</updated>
+  <updated>2012-10-19T23:57:43-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Recommended Reading]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/19/new-post/"/>
+    <updated>2012-10-19T23:48:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/19/new-post</id>
+    <content type="html"><![CDATA[<p>Well, these are a few of my favorites right now.</p>
+
+<p><img src="http://cloudkickr.github.com//s3.amazonaws.com/kickr/assets/images/good-books.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Purity Ring]]></title>
