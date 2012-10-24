@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Database | cloudkickr]]></title>
+  <link href="http://cloudkickr.github.com/blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://cloudkickr.github.com/"/>
+  <updated>2012-10-24T06:02:31-04:00</updated>
+  <id>http://cloudkickr.github.com/</id>
+  <author>
+    <name><![CDATA[Bent Cardan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS and MongoDB]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb/"/>
+    <updated>2012-10-24T03:20:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb</id>
+    <content type="html"><![CDATA[<p>Think outside the box.</p>
+
+<p>We're past relational data. We live in the single page web app era with a preference for Node.js. MongoDB for things of great import (when you use the safe option). Redis instances for all else, i.e., session storage.</p>
+
+<p>But no matter what it all flows back to HTML; even stylesheets cascade down to an element.</p>
+
+<p>With that in mind, let's explore AngularJS for real-time data binding with slick model changes that push up without a page refresh from the user.</p>
+
+<p>Angular is unique. I guess we might compare it to Backbone.JS. In Backbone we declare a model, then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
+
+<p>Sounds good, right? Now let's see if we can wire some AngularJS CRUD to MongoDB... Check back for the snippet on how to do that shortly.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-19T23:57:43-04:00</updated>
+  <updated>2012-10-24T06:02:31-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS and MongoDB]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb/"/>
+    <updated>2012-10-24T03:20:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb</id>
+    <content type="html"><![CDATA[<p>Think outside the box.</p>
+
+<p>We're past relational data. We live in the single page web app era with a preference for Node.js. MongoDB for things of great import (when you use the safe option). Redis instances for all else, i.e., session storage.</p>
+
+<p>But no matter what it all flows back to HTML; even stylesheets cascade down to an element.</p>
+
+<p>With that in mind, let's explore AngularJS for real-time data binding with slick model changes that push up without a page refresh from the user.</p>
+
+<p>Angular is unique. I guess we might compare it to Backbone.JS. In Backbone we declare a model, then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
+
+<p>Sounds good, right? Now let's see if we can wire some AngularJS CRUD to MongoDB... Check back for the snippet on how to do that shortly.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Recommended Reading]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/19/recommended-reading/"/>
+    <updated>2012-10-19T23:48:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/19/recommended-reading</id>
+    <content type="html"><![CDATA[<p>Well, these are a few of my favorites right now.</p>
+
+<p><img src="http://cloudkickr.github.com//s3.amazonaws.com/kickr/assets/images/good-books.jpg"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What's wrong with JavaScript?]]></title>
@@ -40,9 +70,9 @@
 
 <p>The language is responsible for full stack web apps that perform as well as or even many times faster than what we would expect from <a href="http://rubyonrails.org/">Ruby on Rails</a>, backed by databases, request routers and their corollary, sometimes implemented in a controller: the response object.</p>
 
-<p>Node is wild. We write Node Apps in JavaScript but it's like nothing I've ever done before. Callback functions implement event-loops with asynchronous executions unconcerned about linear structures of logic.</p>
+<p>Node is wild. We write Node Apps in JavaScript but it's like nothing I've ever done before. Callback functions guide the event-loop asynchronously.</p>
 
-<p>Control the event loop by iterating nested functions. Functions within functions keep enuables under control. The server below stores keys and values in <a href="http://redis.io/">Redis</a> for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
+<p>Control the event loop by nesting functions in the fashion of JavaScript closures. It's out of hand when the inner function has a longer lifetime than its outer function. The server below stores keys and values in <a href="http://redis.io/">Redis</a> for session management during user authentication. Redis is useful for keeping track of state, non-blocking and super fast.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>excerpt from redis module - user.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -117,7 +147,7 @@
 
 <p>File uploading and content management behind the auth layer are supported by MongoDB. I'm a fan of regular Mongo with the npm BSON install, but for this project I went for <a href="http://mongoosejs.com/">Mongoose</a>.</p>
 
-<p>By separating logic out into modules we keep our code decoupled the way we like. We declare those dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient, reducing the chances of unintended memory leak.</p>
+<p>By separating logic out into modules we keep our code decoupled the way we like. We declare these dependencies in JavaScript through variable hoisting, so that our runtime stays predictable and most efficient, reducing the chances of unintended memory leak.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>express 3 - app.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -262,10 +292,6 @@
 <span class='line-number'>140</span>
 <span class='line-number'>141</span>
 <span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
 </pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="err">/&lt;em&gt;*</span>
@@ -280,10 +306,6 @@
 </span><span class='line'>  <span class="p">,</span> <span class="nx">photos</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/photos&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">about</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/about&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">contact</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/contact&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">,</span> <span class="nx">songs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/songs&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">,</span> <span class="nx">studios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/studios&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">,</span> <span class="nx">entertainment</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/entertainment&#39;</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">,</span> <span class="nx">create</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/create&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">blog</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes/blog&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">helpers</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./lib/helpers&#39;</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">,</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">)</span>

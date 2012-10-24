@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Books | cloudkickr]]></title>
+  <link href="http://cloudkickr.github.com/blog/categories/books/atom.xml" rel="self"/>
+  <link href="http://cloudkickr.github.com/"/>
+  <updated>2012-10-24T06:02:31-04:00</updated>
+  <id>http://cloudkickr.github.com/</id>
+  <author>
+    <name><![CDATA[Bent Cardan]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Recommended Reading]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/19/recommended-reading/"/>
+    <updated>2012-10-19T23:48:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/19/recommended-reading</id>
+    <content type="html"><![CDATA[<p>Well, these are a few of my favorites right now.</p>
+
+<p><img src="http://cloudkickr.github.com//s3.amazonaws.com/kickr/assets/images/good-books.jpg"></p>
+]]></content>
+  </entry>
+  
+</feed>
