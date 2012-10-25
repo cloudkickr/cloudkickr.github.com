@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MongoDB | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/mongodb/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-25T00:48:31-04:00</updated>
+  <updated>2012-10-25T00:57:35-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -20,19 +20,23 @@
     <id>http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb</id>
     <content type="html"><![CDATA[<p>Think outside the box.</p>
 
-<p>We're past relational data. We live in the single page web app era with a preference for <a href="http://nodejs.org/">Node.js</a>. <a href="http://www.mongodb.org/">MongoDB</a> for things of great import (use the safe command). <a href="http://redis.io/">Redis</a> instances for all else, i.e., session storage.</p>
+<p>We're past relational data. We live in the single page web app era with a preference for <a href="http://nodejs.org/">Node.js</a>. <a href="http://www.mongodb.org/">MongoDB</a> for things of great import, use the safe command:</p>
 
-<p>But no matter what it all flows back to HTML; even stylesheets cascade down to an element.</p>
+<p><code>collection.insert(doc2, {safe:true}, function(err, result) {});</code></p>
+
+<p><a href="http://redis.io/">Redis</a> instances for all else, i.e., session storage.</p>
+
+<p>No matter what though it all flows back to HTML; even stylesheets cascade down to an element.</p>
 
 <p>With that in mind, let's explore whether <a href="http://angularjs.org/">AngularJS</a> can help us craft real-time <a href="http://en.wikipedia.org/wiki/UI_data_binding">data binding</a> with the type of model changes that push up without a page refresh from the user.</p>
 
 <p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
 
-<p>AngularJS offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters.</p>
+<p>AngularJS offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (and their corresponding events fired up from the data-model) bubble to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters.</p>
 
 <p>In completely different fashion, <a href="http://en.wikipedia.org/wiki/Dependency_injection">dependency injection</a> in AngularJS allows us to <a href="http://en.wikipedia.org/wiki/Declarative_programming">declaratively</a> describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
 
-<p>Sounds good, right? Now let's see if we can wire some AngularJS <a href="">CRUD</a> to MongoDB... Check back soon for the snippet on how to do that, I'm working it out right now and I'll update this post soon with examples.</p>
+<p>Sounds good, right? Now let's see if we can wire some AngularJS <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> to MongoDB... Check back soon for the snippet on how to do that, I'm working it out right now and I'll update this post soon with examples.</p>
 ]]></content>
   </entry>
   
