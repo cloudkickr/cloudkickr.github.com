@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NodeJS | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-25T00:37:07-04:00</updated>
+  <updated>2012-10-25T00:38:39-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -20,7 +20,7 @@
     <id>http://cloudkickr.github.com/blog/2012/10/25/express-3-released</id>
     <content type="html"><![CDATA[<p><a href="http://expressjs.com/">Express</a> is officially version 3 since yesterday.  After a series of test-oriented commits throughout October, <a href="https://github.com/visionmedia">TJ Holowaychuk</a> bumped his node framework of developer fame from <a href="https://github.com/visionmedia/express/commit/12d97169d729529ae5dd7f453373e35da0fe1b6c">rc5 to 3.0.0</a></p>
 
-<p>We're all exited. I'm upding package.json files and reinstalling this thing globally. By the way, protect your keyboard, just run <code>npm i</code> to install from package.json. We don't have to write out the word install everytime.</p>
+<p>We're all exited. I'm updating package.json files and reinstalling this thing globally. By the way, protect your keyboard, just run <code>npm i</code> to install from package.json. We don't have to write out the word install everytime.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>new app - package.js on </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
