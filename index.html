@@ -103,7 +103,7 @@
   </header>
 
 
-  <div class="entry-content"><p><a href="http://expressjs.com/">Express</a> is officially version 3 since yesterday.  After a series of test-oriented commits throughout October, <a href="https://github.com/visionmedia">TJ Holowaychuk</a> bumped his node framework of developer fame from <a href="https://github.com/visionmedia/express/commit/12d97169d729529ae5dd7f453373e35da0fe1b6c">rc5 to 3.0.0</a></p>
+  <div class="entry-content"><p><a href="http://expressjs.com/">Express</a> is officially version 3 since yesterday.  After a series of test-oriented commits throughout October, <a href="https://github.com/visionmedia">TJ Holowaychuk</a> bumped his node framework of developer fame from <a href="https://github.com/visionmedia/express/commit/12d97169d729529ae5dd7f453373e35da0fe1b6c">rc5 to 3.0.0</a>.</p>
 
 <p>We&#8217;re all exited. I&#8217;m updating package.json files and reinstalling this thing globally. By the way, protect your keyboard, just run <code>npm i</code> to install from package.json. We don&#8217;t have to write out the word install everytime.</p>
 
@@ -161,17 +161,19 @@
 
   <div class="entry-content"><p>Think outside the box.</p>
 
-<p>We&#8217;re past relational data. We live in the single page web app era with a preference for Node.js. MongoDB for things of great import (when you use the safe option). Redis instances for all else, i.e., session storage.</p>
+<p>We&#8217;re past relational data. We live in the single page web app era with a preference for <a href="http://nodejs.org/">Node.js</a>. <a href="http://www.mongodb.org/">MongoDB</a> for things of great import (use the safe command). <a href="http://redis.io/">Redis</a> instances for all else, i.e., session storage.</p>
 
 <p>But no matter what it all flows back to HTML; even stylesheets cascade down to an element.</p>
 
-<p>With that in mind, let&#8217;s explore whether AngularJS can help us craft real-time data binding with the type of model changes that push up without a page refresh from the user.</p>
+<p>With that in mind, let&#8217;s explore whether <a href="http://angularjs.org/">AngularJS</a> can help us craft real-time <a href="http://en.wikipedia.org/wiki/UI_data_binding">data binding</a> with the type of model changes that push up without a page refresh from the user.</p>
 
-<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is often unruly.</p>
+<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
 
-<p>AngularJS offers a unique solution that may simplify things. We might compare it to Backbone.JS. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
+<p>AngularJS offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters.</p>
 
-<p>Sounds good, right? Now let&#8217;s see if we can wire some AngularJS CRUD to MongoDB&#8230; Check back soon for the snippet on how to do that, I&#8217;m working it out right now and I&#8217;ll update this post soon with examples.</p>
+<p>In completely different fashion, <a href="http://en.wikipedia.org/wiki/Dependency_injection">dependency injection</a> in AngularJS allows us to <a href="http://en.wikipedia.org/wiki/Declarative_programming">declaratively</a> describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
+
+<p>Sounds good, right? Now let&#8217;s see if we can wire some AngularJS <a href="">CRUD</a> to MongoDB&#8230; Check back soon for the snippet on how to do that, I&#8217;m working it out right now and I&#8217;ll update this post soon with examples.</p>
 </div>
   
   
