@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-25T00:57:35-04:00</updated>
+  <updated>2012-10-25T01:06:05-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -61,7 +61,7 @@
 
 <p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
 
-<p>AngularJS offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (and their corresponding events fired up from the data-model) bubble to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters.</p>
+<p><a href="http://www.youtube.com/user/angularjs">Angular</a> offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (plus corresponding events fired from the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters&#8211;<a href="http://addyosmani.github.com/backbone-fundamentals/#mvc-mvp">The Observer Pattern</a>.</p>
 
 <p>In completely different fashion, <a href="http://en.wikipedia.org/wiki/Dependency_injection">dependency injection</a> in AngularJS allows us to <a href="http://en.wikipedia.org/wiki/Declarative_programming">declaratively</a> describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
 
