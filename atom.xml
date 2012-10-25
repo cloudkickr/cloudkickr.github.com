@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-24T11:17:53-04:00</updated>
+  <updated>2012-10-25T00:37:07-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -14,7 +14,36 @@
 
   
   <entry>
-    <title type="html"><![CDATA[AngularJS and MongoDB]]></title>
+    <title type="html"><![CDATA[express 3 released]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/25/express-3-released/"/>
+    <updated>2012-10-25T00:03:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/25/express-3-released</id>
+    <content type="html"><![CDATA[<p><a href="http://expressjs.com/">Express</a> is officially version 3 since yesterday.  After a series of test-oriented commits throughout October, <a href="https://github.com/visionmedia">TJ Holowaychuk</a> bumped his node framework of developer fame from <a href="https://github.com/visionmedia/express/commit/12d97169d729529ae5dd7f453373e35da0fe1b6c">rc5 to 3.0.0</a></p>
+
+<p>We&#8217;re all exited. I&#8217;m upding package.json files and reinstalling this thing globally. By the way, protect your keyboard, just run <code>npm i</code> to install from package.json. We don&#8217;t have to write out the word install everytime.</p>
+
+<figure class='code'><figcaption><span>new app - package.js on </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'>   <span class="p">},</span>
+</span><span class='line'>  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="s2">&quot;express&quot;</span><span class="o">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;jade&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;stylus&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS plus MongoDB]]></title>
     <link href="http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb/"/>
     <updated>2012-10-24T03:20:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb</id>
@@ -26,7 +55,9 @@
 
 <p>With that in mind, let&#8217;s explore whether AngularJS can help us craft real-time data binding with the type of model changes that push up without a page refresh from the user.</p>
 
-<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is often unruly. AngularJS offers a unique solution that may simplify things. We might compare it to Backbone.JS. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
+<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is often unruly.</p>
+
+<p>AngularJS offers a unique solution that may simplify things. We might compare it to Backbone.JS. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
 
 <p>Sounds good, right? Now let&#8217;s see if we can wire some AngularJS CRUD to MongoDB&#8230; Check back soon for the snippet on how to do that, I&#8217;m working it out right now and I&#8217;ll update this post soon with examples.</p>
 ]]></content>

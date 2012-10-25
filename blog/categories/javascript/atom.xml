@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-24T11:17:53-04:00</updated>
+  <updated>2012-10-25T00:37:07-04:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -14,7 +14,49 @@
 
   
   <entry>
-    <title type="html"><![CDATA[AngularJS and MongoDB]]></title>
+    <title type="html"><![CDATA[express 3 released]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/10/25/express-3-released/"/>
+    <updated>2012-10-25T00:03:00-04:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/10/25/express-3-released</id>
+    <content type="html"><![CDATA[<p><a href="http://expressjs.com/">Express</a> is officially version 3 since yesterday.  After a series of test-oriented commits throughout October, <a href="https://github.com/visionmedia">TJ Holowaychuk</a> bumped his node framework of developer fame from <a href="https://github.com/visionmedia/express/commit/12d97169d729529ae5dd7f453373e35da0fe1b6c">rc5 to 3.0.0</a></p>
+
+<p>We're all exited. I'm upding package.json files and reinstalling this thing globally. By the way, protect your keyboard, just run <code>npm i</code> to install from package.json. We don't have to write out the word install everytime.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>new app - package.js on </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="p">},</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="s2">&quot;dependencies&quot;</span><span class="o">:</span> <span class="p">{</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="s2">&quot;express&quot;</span><span class="o">:</span> <span class="s2">&quot;3.0.0&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s2">&quot;jade&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="s2">&quot;stylus&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS plus MongoDB]]></title>
     <link href="http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb/"/>
     <updated>2012-10-24T03:20:00-04:00</updated>
     <id>http://cloudkickr.github.com/blog/2012/10/24/angularjs-mongodb</id>
@@ -26,7 +68,9 @@
 
 <p>With that in mind, let's explore whether AngularJS can help us craft real-time data binding with the type of model changes that push up without a page refresh from the user.</p>
 
-<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is often unruly. AngularJS offers a unique solution that may simplify things. We might compare it to Backbone.JS. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
+<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is often unruly.</p>
+
+<p>AngularJS offers a unique solution that may simplify things. We might compare it to Backbone.JS. In Backbone, data changes (and their corresponding events fired on the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters. In completely different fashion, dependency injection in AngularJS allows us to declaratively describe how our application is wired. The approach in Angular is such that any JavaScript object can be a model.</p>
 
 <p>Sounds good, right? Now let's see if we can wire some AngularJS CRUD to MongoDB... Check back soon for the snippet on how to do that, I'm working it out right now and I'll update this post soon with examples.</p>
 ]]></content>
@@ -508,54 +552,6 @@
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[some jQuery effects]]></title>
-    <link href="http://cloudkickr.github.com/blog/2012/07/29/jquery-effects/"/>
-    <updated>2012-07-29T02:27:00-04:00</updated>
-    <id>http://cloudkickr.github.com/blog/2012/07/29/jquery-effects</id>
-    <content type="html"><![CDATA[<p>I need to reference some simple JavaScript over here for a site I'm building. We're going to review the basic jQuery effects and end up explaining method syntax.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Hide Method - hide.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-This method hides all the elements in a jQuery object. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Timed Hide - hide.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Passing in the time constraint hides elements in a jQuery object over the duration with an optional easing style. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>hide with function - hide.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">hide</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Hide the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.<br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Show Method - show.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-This method shows all the elements in a jQuery object. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Timed show - show.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Passing in the time constraint shows elements in a jQuery object over the duration with an optional easing style. <br/>
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>show with function - show.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
-</span><span class='line'><span class="nx">show</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">easing</span><span class="p">,</span> <span class="kd">function</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Show the elements in a jQuery object over the specified duration with an optional easing style and a function called when the effect is complete.</p>
 ]]></content>
   </entry>
   
