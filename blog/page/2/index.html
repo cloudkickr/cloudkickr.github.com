@@ -9,7 +9,21 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="One small commit to open source, one giant leap for mankind? Obviously this is old technology for the aliens who work at google.com. But the rest of &hellip;">
+  <meta name="description" content="bucket policy - bucketpolicy.js 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+{ &quot;Version&quot;: &quot;2008-10-17&quot;, &quot;Statement&quot;: [ { &quot;Sid &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +88,76 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/02/using-jekyll-s3/">Jekyll-s3</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-02T08:52:00-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+
+<figure class='code'><figcaption><span>bucket policy - bucketpolicy.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;2008-10-17&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="s2">&quot;Statement&quot;</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>      <span class="p">{</span>
+</span><span class='line'>          <span class="s2">&quot;Sid&quot;</span><span class="o">:</span> <span class="s2">&quot;PublicReadGetObject&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="s2">&quot;Effect&quot;</span><span class="o">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="s2">&quot;Principal&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>              <span class="s2">&quot;AWS&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
+</span><span class='line'>          <span class="p">},</span>
+</span><span class='line'>          <span class="s2">&quot;Action&quot;</span><span class="o">:</span> <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+</span><span class='line'>          <span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="s2">&quot;arn:aws:s3:::yourbucketnamehere.com/*&quot;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">]</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -554,6 +638,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/11/08/circle/">cirlce</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/25/express-3-released/">express 3 released</a>
       </li>
     
@@ -567,10 +655,6 @@
     
       <li class="post">
         <a href="/blog/2012/10/06/purity-ring/">Purity Ring</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/06/florence/">Florence + The Machine</a>
       </li>
     
   </ul>
@@ -591,6 +675,10 @@
 </section>
 
 
+<a href="http://stackoverflow.com/users/917118/bent-cardan?theme=dark">
+<img src="http://stackoverflow.com/users/flair/917118.png" width="208" height="58" alt="profile for Bent Cardan at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Bent Cardan at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
+
 <section>
 	
 	<a href="http://coderwall.com/bcardan"><img alt="Endorse bcardan on Coderwall" src="http://api.coderwall.com/bcardan/endorsecount.png" /></a>
@@ -603,7 +691,7 @@
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
-      getTwitterFeed("bcardan", 4, false);
+      getTwitterFeed("bcardan", 7, false);
     });
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
@@ -613,6 +701,15 @@
 </section>
 
 
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/bcardan?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 
 
 
@@ -632,6 +729,15 @@
   
 
 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 

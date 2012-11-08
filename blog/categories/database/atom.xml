@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Database | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-10-25T01:16:02-04:00</updated>
+  <updated>2012-11-08T14:16:00-05:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -24,13 +24,13 @@
 
 <p><code>collection.insert(doc2, {safe:true}, function(err, result) {});</code></p>
 
-<p><a href="http://redis.io/">Redis</a> instances for all else, i.e., session storage.</p>
+<p><a href="http://redis.io/">Redis</a> instances are cool speedy transaction when data persistence over a long duration is lower priority, i.e., session storage.</p>
 
 <p>No matter what though it all flows back to HTML; even stylesheets cascade down to an element.</p>
 
-<p>With that in mind, let's explore whether <a href="http://angularjs.org/">AngularJS</a> can help us craft real-time <a href="http://en.wikipedia.org/wiki/UI_data_binding">data binding</a> with the type of model changes that push up to demonstrate themselves in the view without the user's page refreshing.</p>
+<p>With that in mind, let's explore whether <a href="http://angularjs.org/">AngularJS</a> can help us craft real-time <a href="http://en.wikipedia.org/wiki/UI_data_binding">data bindings</a> that update the view immediately whenever the model changes.</p>
 
-<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
+<p>JavaScript is definitely powerful enough to create DOM updates on changes in our data model. Of course the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
 
 <p><a href="http://www.youtube.com/user/angularjs">Angular</a> offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (plus corresponding events fired from the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters--<a href="http://addyosmani.github.com/backbone-fundamentals/#mvc-mvp">The Observer Pattern</a>.</p>
 

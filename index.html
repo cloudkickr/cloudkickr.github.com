@@ -9,7 +9,8 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="Express is officially version 3 since yesterday. After a series of test-oriented commits throughout October, TJ Holowaychuk bumped his node framework &hellip;">
+  <meta name="description" content=" Circle Ranch 2012 from Sam Steves II on Vimeo.
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +81,45 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/11/08/circle/">Cirlce</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-08T14:14:00-05:00" pubdate data-updated="true">Nov 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><iframe src="http://player.vimeo.com/video/53032342?badge=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+
+<p> <p><a href="http://vimeo.com/53032342">Circle Ranch 2012</a> from <a href="http://vimeo.com/user10268714">Sam Steves II</a> on <a href="http://vimeo.com">Vimeo</a>.</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/10/25/express-3-released/">Express 3 Released</a></h1>
     
     
@@ -105,7 +145,7 @@
 
   <div class="entry-content"><p><a href="http://expressjs.com/">Express</a> is officially version 3 since yesterday.  After a series of test-oriented commits throughout October, <a href="https://github.com/visionmedia">TJ Holowaychuk</a> bumped his node framework of developer fame from <a href="https://github.com/visionmedia/express/commit/12d97169d729529ae5dd7f453373e35da0fe1b6c">rc5 to 3.0.0</a>.</p>
 
-<p>We&#8217;re all exited. I&#8217;m updating package.json files and reinstalling this thing globally. By the way, protect your keyboard, just run <code>npm i</code> to install from package.json. We don&#8217;t have to write out the word install everytime.</p>
+<p>We&#8217;re all exited. It is a great time to be in web technology. I&#8217;m using express a lot. Really enjoy the speed of creation using Jade templating and Stylus. Both of those expressy things broke free and are way out of the mold of sytax time killing contraints.  Time to update package.json files and express on our systems. By the way make sure to protect your keyboard by saving six letters that often get tossed around for no reason. Just run <code>npm i</code> to install from package.json. No need to write out the word install everytime.</p>
 
 <figure class='code'><figcaption><span>new app - package.js on </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -165,13 +205,13 @@
 
 <p><code>collection.insert(doc2, {safe:true}, function(err, result) {});</code></p>
 
-<p><a href="http://redis.io/">Redis</a> instances for all else, i.e., session storage.</p>
+<p><a href="http://redis.io/">Redis</a> instances are cool speedy transaction when data persistence over a long duration is lower priority, i.e., session storage.</p>
 
 <p>No matter what though it all flows back to HTML; even stylesheets cascade down to an element.</p>
 
-<p>With that in mind, let&#8217;s explore whether <a href="http://angularjs.org/">AngularJS</a> can help us craft real-time <a href="http://en.wikipedia.org/wiki/UI_data_binding">data binding</a> with the type of model changes that push up to demonstrate themselves in the view without the user&#8217;s page refreshing.</p>
+<p>With that in mind, let&#8217;s explore whether <a href="http://angularjs.org/">AngularJS</a> can help us craft real-time <a href="http://en.wikipedia.org/wiki/UI_data_binding">data bindings</a> that update the view immediately whenever the model changes.</p>
 
-<p>JavaScript is powerful enough to create real-time DOM updates on changes in our data model. But the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
+<p>JavaScript is definitely powerful enough to create DOM updates on changes in our data model. Of course the language is <a href="http://javascript.crockford.com/javascript.html">often unruly</a>.</p>
 
 <p><a href="http://www.youtube.com/user/angularjs">Angular</a> offers a unique solution that may simplify things. Compare to <a href="http://backbonejs.org/">Backbone</a>. In Backbone, data changes (plus corresponding events fired from the data-model) bubble up to the view. So we like to start by declaring a model. Then extend it to watch for changes on the model via getters and setters&#8211;<a href="http://addyosmani.github.com/backbone-fundamentals/#mvc-mvp">The Observer Pattern</a>.</p>
 
@@ -881,76 +921,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/08/02/using-jekyll-s3/">Jekyll-s3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-02T08:52:00-04:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-
-<figure class='code'><figcaption><span>bucket policy - bucketpolicy.js </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;2008-10-17&quot;</span><span class="p">,</span>
-</span><span class='line'>  <span class="s2">&quot;Statement&quot;</span><span class="o">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">{</span>
-</span><span class='line'>          <span class="s2">&quot;Sid&quot;</span><span class="o">:</span> <span class="s2">&quot;PublicReadGetObject&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="s2">&quot;Effect&quot;</span><span class="o">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="s2">&quot;Principal&quot;</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>              <span class="s2">&quot;AWS&quot;</span><span class="o">:</span> <span class="s2">&quot;*&quot;</span>
-</span><span class='line'>          <span class="p">},</span>
-</span><span class='line'>          <span class="s2">&quot;Action&quot;</span><span class="o">:</span> <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
-</span><span class='line'>          <span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="s2">&quot;arn:aws:s3:::yourbucketnamehere.com/*&quot;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -966,6 +936,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/11/08/circle/">cirlce</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/10/25/express-3-released/">express 3 released</a>
       </li>
     
@@ -979,10 +953,6 @@
     
       <li class="post">
         <a href="/blog/2012/10/06/purity-ring/">Purity Ring</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/06/florence/">Florence + The Machine</a>
       </li>
     
   </ul>
@@ -1003,6 +973,10 @@
 </section>
 
 
+<a href="http://stackoverflow.com/users/917118/bent-cardan?theme=dark">
+<img src="http://stackoverflow.com/users/flair/917118.png" width="208" height="58" alt="profile for Bent Cardan at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Bent Cardan at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
+
 <section>
 	
 	<a href="http://coderwall.com/bcardan"><img alt="Endorse bcardan on Coderwall" src="http://api.coderwall.com/bcardan/endorsecount.png" /></a>
@@ -1015,7 +989,7 @@
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
-      getTwitterFeed("bcardan", 4, false);
+      getTwitterFeed("bcardan", 7, false);
     });
   </script>
   <script src="/javascripts/twitter.js" type="text/javascript"> </script>
@@ -1025,6 +999,15 @@
 </section>
 
 
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/bcardan?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 
 
 
@@ -1044,6 +1027,15 @@
   
 
 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
