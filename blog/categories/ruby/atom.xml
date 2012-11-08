@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-11-08T14:16:00-05:00</updated>
+  <updated>2012-11-08T14:16:24-05:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -20,35 +20,41 @@
     <id>http://cloudkickr.github.com/blog/2012/07/29/rails-4.0.0.beta</id>
     <content type="html"><![CDATA[<p>Rails 4.0.0.beta compiled for production feels faster than Rails 3 to me, especially when proxied by <a href="http://wiki.nginx.org/Main">Nginx</a> and initialized with <a href="http://puma.io/">Puma</a>. First I clone the master branch of <a href="https://github.com/rails/rails">Rails on Github</a>.  There's a multithread option, and background process queue option available by default in the Rails 4 initializers. You'll need ruby 1.9.3 and probably a public key linked to your github, as usual in all things of this nature.</p>
 
-<p>{% codeblock pull down the master branch - clone.sh %}
-$ git clone git://github.com/rails/rails.git
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>pull down the master branch - clone.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>git clone git://github.com/rails/rails.git
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>After the pull, generate Rails 4 beta apps by executing railties binaries in our local copy</p>
 
-<p>{% codeblock generate the rails app - rails.sh %}
-$ rails/railties/bin/rails new myrails4app --edge --skip-bundle --skip-test-unit
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - rails.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rails/railties/bin/rails new myrails4app --edge --skip-bundle --skip-test-unit
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Wait to run bundle for an opportunity to isolate and to manage gem dependencies.</p>
 
-<p>{% codeblock rvm - rvmrc.sh %}
-$ cd myrails4app <br/>
-$ rvm --rvmrc --create 1.9.3@myrails4app
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>rvm - rvmrc.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span><span class="nb">cd </span>myrails4app &lt;br/&gt;
+</span><span class='line'><span class="nv">$ </span>rvm --rvmrc --create 1.9.3@myrails4app
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Add the puma gem for multithreaded processing.</p>
 
-<p>{% codeblock adding puma - Gemfile %}
-gem 'puma'
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>adding puma - Gemfile </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem 'puma'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>If you're going with a relational database, kick up your pool: params in the database.yml file, absolutely the higher pool is ideal, set it to something like pool: 16. Puma defaults to 16 threads when no configuration is specified. Assuming modern server hardware equipped with multi-core processors, this means 16 request/response threads by default will be handled, routed and delivered by the app over one puma process.</p>
 
-<p>{% codeblock inside the config directory - database.yml %}
-database: db/development.sqlite3
-pool: 16
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>inside the config directory - database.yml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">db/development.sqlite3</span>
+</span><span class='line'><span class="l-Scalar-Plain">pool</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">16</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>A potential block arises where the database is unable to write at the speed of the incoming request/response thread. We call that blocking I/O. If we're using Active Record, we might opt for PostgreSQL. <a href="http://redis.io/">Redis</a> would be among the best options available for storing decoupled, thread-safe logic handled by Puma despite Redis' single threaded architecture. In fact, we err to dismiss a Puma/Redis combination on the basis of Puma's multithreaded and Redis' single-threaded architectural difference alone.</p>
 
@@ -56,9 +62,10 @@ pool: 16
 
 <p>Go bigger when you let puma loose if you like. Be mindful that your default database.yml limits threading explicitly by pool size and more implicity at the limit of its ability to write and return data from threads. Pool params represents max simultaneous (or close to it) data transactions into or out of the database. In general we want to increase the size of our pool wherever possible. Set your gems and run Bundle. Beyond this step it's typical that you'll need to nudge on rails executables using 'bundle exec' or try to pass in --binstubs if it can prevent the need for 'bundle exec' if you ever rake migrations or 'rails s'.</p>
 
-<p>{% codeblock generate the rails app - bundle.sh %}
-$ bundle install --binstubs
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>generate the rails app - bundle.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>bundle install --binstubs
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p><a href="http://edgeguides.rubyonrails.org/">Edge guides</a> are helpful, but I spend more time hitting <a href="http://edgeapi.rubyonrails.org/">the edgeapi</a> like a boss. Build up something and try to break it in order to check out the new error messaging and exception handling interface in development mode.</p>
 
@@ -70,29 +77,42 @@ $ bundle install --binstubs
 
 <p>We set a symbolic link in the sites sub-directory to complete this type of Nginx include. Each sym link can reference behavioral configuration in nginx across many different rails apps in parallel on a single IP. Perfect example of the power of unix. Our symbolic link brings config options available to the nginx proxy server as incoming requests to the server occur over the internet. The nginx include function is basically a PHP include() on steroids.</p>
 
-<p>{% codeblock /etc/nginx/sites-enabled link.sh %}
-$ sudo ln -s /home/myusername/allmyedgeapps/myrails4app/config/nginx.conf myrails4app.com
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/etc/nginx/sites-enabled link.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>sudo ln -s /home/myusername/allmyedgeapps/myrails4app/config/nginx.conf myrails4app.com
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>{% codeblock /home/myusername/allmyedgeapps/myrails4app nginx.conf.sh %}
-upstream myrails4app.com {server unix:/tmp/myrails4app.sock fail_timeout=0;}
-server {
- server_name myrails4app.com www.myrails4app.com;
- root /home/myusername/allmyedgeapps/myrails4app/public;
- try_files $uri/index.html $uri @myrails4app.com;
- location @myrails4app.com {
-  proxy_redirect off;
-  proxy_pass http://myrails4app.com;
- }
- error_page 500 502 503 504 /500.html;
-}
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>/home/myusername/allmyedgeapps/myrails4app nginx.conf.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>upstream myrails4app.com <span class="o">{</span>server unix:/tmp/myrails4app.sock <span class="nv">fail_timeout</span><span class="o">=</span>0;<span class="o">}</span>
+</span><span class='line'>server <span class="o">{</span>
+</span><span class='line'> server_name myrails4app.com www.myrails4app.com;
+</span><span class='line'> root /home/myusername/allmyedgeapps/myrails4app/public;
+</span><span class='line'> try_files <span class="nv">$uri</span>/index.html <span class="nv">$uri</span> @myrails4app.com;
+</span><span class='line'> location @myrails4app.com <span class="o">{</span>
+</span><span class='line'>  proxy_redirect off;
+</span><span class='line'>  proxy_pass http://myrails4app.com;
+</span><span class='line'> <span class="o">}</span>
+</span><span class='line'> error_page 500 502 503 504 /500.html;
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Nginx will use port 80 by default so I wouldn't even specify that in the nginx.conf files across all the rails apps sharing port 80 at the proxy outset. Now unleash and initialize puma. Keep in mind that all its incoming/outgoing request/response objects are proxied and passed to and from nginx. Restart Nginx if you have not done so already so that it picks up the configs and knows which upstream socket to point the incoming request associated with the specified servername. Make sure the hand-off occurs at the same place (the shared unix socket)... so double check your upstream block, it's ok you're supposed to put three forward slashes in what's passed to puma and only one forward slash ahead of that same location in your nginx upstream block.</p>
 
-<p>{% codeblock let puma run multi-thread from the root directory of your rails app - puma.sh %}
-$ puma -b unix:///tmp/myrails4app.sock
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>let puma run multi-thread from the root directory of your rails app - puma.sh </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>puma -b unix:///tmp/myrails4app.sock
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>I'll go against the trend to advocate configuration over convention just this once in order to be realistic. Deployment is as important as anything else. Now most of our sequence here is arbitrary. After the sym link is made you have to restart nginx but the rest of it could occur before or after the unix socket is held down at puma initialization. Once proxy and puma's socket are up go check your example.com, we used myrails4app.com in this discussion. You might forward domains or subdomians any domain or even a naked IP address would be all treated equally for any number of rails apps pointed to that IP address, or the IPv6 address too if possible. As Rails developers I know its a little unkosher to mention lower level IPv6, but come on, drawing from all this I hope you have a sense for the possiblities and found this post useful. Ryan Bates taught me how to do much of the puma stuff on <a href="http://railscasts.com/">railscasts.com</a>.</p>
 ]]></content>
