@@ -9,21 +9,11 @@
   <meta name="author" content="Bent Cardan">
 
   
-  <meta name="description" content="bucket policy - bucketpolicy.js 1
+  <meta name="description" content="Named routes are key to rails 3. Use the :as parameter. named route - routes.rb 1
 2
 3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-{ &quot;Version&quot;: &quot;2008-10-17&quot;, &quot;Statement&quot;: [ { &quot;Sid &hellip;">
+YourApp::Application.routes.draw do
+match &#39;/route&#39; =&gt &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +78,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/08/08/routes/">Fix Your Routes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-08T23:51:00-04:00" pubdate data-updated="true">Aug 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Named routes are key to rails 3. Use the :as parameter.</p>
+
+<figure class='code'><figcaption><span>named route - routes.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="no">YourApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">draw</span> <span class="k">do</span>
+</span><span class='line'><span class="n">match</span> <span class="s1">&#39;/route&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;static_pages#route&#39;</span><span class="p">,</span> <span class="ss">:as</span> <span class="o">=&gt;</span> <span class="ss">:route</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -638,6 +674,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/12/09/good-music/">Big Music</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/11/08/circle/">Circle Ranch</a>
       </li>
     
@@ -651,10 +691,6 @@
     
       <li class="post">
         <a href="/blog/2012/10/19/recommended-reading/">Recommended Reading</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/06/purity-ring/">Purity Ring</a>
       </li>
     
   </ul>

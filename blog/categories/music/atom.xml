@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: music | cloudkickr]]></title>
+  <title><![CDATA[Category: Music | cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/blog/categories/music/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-11-08T14:16:24-05:00</updated>
+  <updated>2012-12-09T15:24:10-05:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -14,18 +14,21 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Florence + The Machine]]></title>
-    <link href="http://cloudkickr.github.com/blog/2012/10/06/florence/"/>
-    <updated>2012-10-06T18:10:00-04:00</updated>
-    <id>http://cloudkickr.github.com/blog/2012/10/06/florence</id>
-    <content type="html"><![CDATA[<p>I love listening to Florence. Perfect background for programming the next big thing!</p>
-
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F49701267&amp;auto_play=false&amp;show_artwork=true&amp;color=5072a6"></iframe>
+    <title type="html"><![CDATA[Big Music]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/12/09/good-music/"/>
+    <updated>2012-12-09T14:46:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/12/09/good-music</id>
+    <content type="html"><![CDATA[<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F65512991"></iframe>
 
 
 
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F24787124&amp;auto_play=false&amp;show_artwork=true&amp;color=5072a6"></iframe>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F19968968"></iframe>
+
+
+
+
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F59449492"></iframe>
 
 ]]></content>
   </entry>
