@@ -4,7 +4,7 @@
   <title><![CDATA[cloudkickr]]></title>
   <link href="http://cloudkickr.github.com/atom.xml" rel="self"/>
   <link href="http://cloudkickr.github.com/"/>
-  <updated>2012-12-09T16:20:42-05:00</updated>
+  <updated>2012-12-16T14:00:54-05:00</updated>
   <id>http://cloudkickr.github.com/</id>
   <author>
     <name><![CDATA[Bent Cardan]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Classic 80s]]></title>
+    <link href="http://cloudkickr.github.com/blog/2012/12/16/classic-80s/"/>
+    <updated>2012-12-16T13:58:00-05:00</updated>
+    <id>http://cloudkickr.github.com/blog/2012/12/16/classic-80s</id>
+    <content type="html"><![CDATA[<p>This is from Cars&#8217; album called &#8220;Heartbeat City&#8221;, from 1984. This album is one of the #1 80&#8217;s classics of all times. ﻿ Cautiously hopeful, upbeat, and dares to be optimistic.</p>
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/9pxHjpC6-m0" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Big Music]]></title>
@@ -897,15 +909,6 @@
     <content type="html"><![CDATA[<p>Cloudkickr is pleased to tell about its recent successful GitLab deployment. <a target="_blank" href="http://gitlabhq.com/">GitlabHQ</a> is for anyone managing project source code or interested in greater version-control and visibility with Git. Based on <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a>, GitLab is a free git repository management app. It&#8217;s your own lite app for projects/repositories hosting on your server. Moreover, it&#8217;s fast, secure and a stable solution built straight off the <a target="_blank" href="http://rubyonrails.org/">Ruby on Rails</a> framework.</p>
 
 <p>See a live demo of cloudkickr&#8217;s deployment at <a href="http://fresh.gs" target="_blank">fresh.gs</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Surfacing from Source]]></title>
-    <link href="http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source/"/>
-    <updated>2011-12-30T21:02:00-05:00</updated>
-    <id>http://cloudkickr.github.com/blog/2011/12/30/surfacing-from-source</id>
-    <content type="html"><![CDATA[<p>This blog is open-source and hosted by github. Framed by <a href="http://octopress.org">Octopress</a>. Origin <a href="https://github.com/cloudkickr/cloudkickr.github.com">here.<a/></p>
 ]]></content>
   </entry>
   
